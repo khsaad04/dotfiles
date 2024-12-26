@@ -50,7 +50,7 @@
       # neovim
       pkgs.neovim
       pkgs.luajitPackages.jsregexp
-      pkgs.gnumake
+      pkgs.cmake
       pkgs.unzip
       pkgs.tree-sitter
       pkgs.ripgrep

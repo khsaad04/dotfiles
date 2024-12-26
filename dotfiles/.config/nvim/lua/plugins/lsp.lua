@@ -13,10 +13,7 @@ return {
                     end
                     vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
                 end
-                nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-                nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-                nmap("<leader>q", require("telescope.builtin").diagnostics, "[Q]uickfix")
+                nmap("<leader>q", vim.diagnostics.setloclist, "[Q]uickfix")
                 nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
                 nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
                 nmap("<space>e", vim.diagnostic.open_float, "Open diagnostic float")

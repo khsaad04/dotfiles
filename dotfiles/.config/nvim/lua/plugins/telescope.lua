@@ -2,14 +2,6 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
         {
-            "<leader><space>",
-            function()
-                require("telescope.builtin").buffers()
-            end,
-            mode = "n",
-            desc = "[ ] Find existing buffers",
-        },
-        {
             "<leader>sf",
             function()
                 require("telescope.builtin").find_files()
@@ -26,14 +18,6 @@ return {
             desc = "[S]earch [H]elp",
         },
         {
-            "<leader>sw",
-            function()
-                require("telescope.builtin").grep_string()
-            end,
-            mode = "n",
-            desc = "[S]earch current [W]ord",
-        },
-        {
             "<leader>sg",
             function()
                 require("telescope.builtin").live_grep()
@@ -46,25 +30,41 @@ return {
         "nvim-lua/plenary.nvim",
         {
             "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
-            cond = function()
-                return vim.fn.executable("make") == 1
-            end,
+            build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
         },
     },
     config = function()
-        require("telescope").setup({
+        local telescope = require("telescope")
+
+        telescope.setup({
             defaults = {
-                mappings = {
-                    i = {
-                        ["<C-u>"] = false,
-                        ["<C-d>"] = false,
-                    },
+                vimgrep_arguments = {
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    "--hidden",
+                    "--glob",
+                    "!**/.git/*",
+                },
+            },
+            pickers = {
+                find_files = {
+                    find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+                },
+            },
+            extensions = {
+                fzf = {
+                    fuzzy = true,
+                    override_generic_sorter = true,
+                    override_file_sorter = true,
+                    case_mode = "smart_case",
                 },
             },
         })
-
-        -- Enable telescope fzf native, if installed
-        pcall(require("telescope").load_extension, "fzf")
+        telescope.load_extension("fzf")
     end,
 }
