@@ -18,7 +18,7 @@
       perSystem =
         { pkgs, ... }:
         {
-          devShells.default = pkgs.mkShell { packages = [ pkgs.home-manager ]; };
+          devShells.default = pkgs.mkShell { };
           inherit (inputs.self.packages.${pkgs.stdenv.system}) formatter;
         };
     };
