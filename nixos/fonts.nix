@@ -12,14 +12,15 @@
           common = [
             "Iosevka"
             "Symbols Nerd Font"
-            "Noto Color Emoji"
+            "Noto Sans Bengali"
+            "Noto Serif Bengali"
           ];
         in
         {
-          monospace = [ "Noto Sans Bengali" ] ++ common;
-          serif = [ "Noto Serif Bengali" ] ++ common;
-          sansSerif = [ "Noto Sans Bengali" ] ++ common;
-          emoji = common;
+          monospace = common;
+          serif = common;
+          sansSerif = common;
+          emoji = [ "Noto Color Emoji" ];
         };
     };
   };
