@@ -3,23 +3,32 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
     dotman.url = "github:khsaad04/dotman";
   };
 
   outputs =
-    { flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        ./nixos/hosts
-        ./packages
-      ];
-      systems = [ "x86_64-linux" ];
-      perSystem =
-        { pkgs, ... }:
-        {
-          devShells.default = pkgs.mkShell { };
-          inherit (inputs.self.packages.${pkgs.stdenv.system}) formatter;
+    { nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      mkHost =
+        hostName:
+        inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./nixos/hosts/${hostName}/configuration.nix
+            ./nixos/hosts/${hostName}/hardware-configuration.nix
+            ./nixos
+            { networking.hostName = "${hostName}"; }
+          ];
         };
+    in
+    {
+      nixosConfigurations = {
+        desktop = mkHost "desktop";
+      };
+      packages.${system} = import ./packages { inherit pkgs; };
     };
 }
