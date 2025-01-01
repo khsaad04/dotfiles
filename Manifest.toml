@@ -2,8 +2,8 @@
 wallpaper = ".config/wallpapers/wp.jpg"
 
 [files]
-config     = {target=".config"                                                                            }
-firefox    = {target=".mozilla"                                                                           }
+config     = {target=".config/[!.mozilla]*"                                                               }
+firefox    = {target=".config/.mozilla", dest = ".mozilla"                                                }
 dunst      = {target=".config/dunst/dunstrc",                    template="templates/dunstrc"             }
 foot       = {target=".config/foot/foot.ini",                    template="templates/foot.ini"            }
 gtk3css    = {target=".config/gtk-3.0/gtk.css",                  template="templates/gtk.css"             }
