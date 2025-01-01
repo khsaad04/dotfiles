@@ -2,7 +2,7 @@
 wallpaper = ".config/wallpapers/wp.jpg"
 
 [files]
-config     = {target=".config/[!.mozilla]*"                                                               }
+config     = {target=".config/[!.]*"                                                                      }
 firefox    = {target=".config/.mozilla", dest = ".mozilla"                                                }
 dunst      = {target=".config/dunst/dunstrc",                    template="templates/dunstrc"             }
 foot       = {target=".config/foot/foot.ini",                    template="templates/foot.ini"            }
