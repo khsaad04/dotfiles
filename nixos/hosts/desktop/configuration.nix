@@ -14,7 +14,6 @@
     nix-ld.enable = true;
     nano.enable = false;
     fish.enable = true;
-    git.enable = true;
     adb.enable = true;
     direnv = {
       enable = true;
@@ -32,74 +31,6 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-    systemPackages = [
-      # sway
-      pkgs.wl-clip-persist
-      pkgs.findutils
-      pkgs.sway-contrib.grimshot
-
-      # theming
-      pkgs.adw-gtk3
-      pkgs.adwaita-icon-theme
-      pkgs.xorg.xrdb
-      pkgs.qt6Packages.qtstyleplugin-kvantum
-      pkgs.qt6Packages.qt6ct
-      pkgs.libsForQt5.qtstyleplugin-kvantum
-      pkgs.libsForQt5.qt5ct
-
-      # neovim
-      pkgs.neovim
-      pkgs.luajitPackages.jsregexp
-      pkgs.cmake
-      pkgs.unzip
-      pkgs.tree-sitter
-      pkgs.ripgrep
-      pkgs.lua-language-server
-      pkgs.nil
-      pkgs.stylua
-      pkgs.prettierd
-
-      # misc
-      pkgs.xdg-utils
-      pkgs.wget
-      pkgs.file
-      pkgs.fd
-      pkgs.ripgrep
-      pkgs.btop
-      pkgs.qemu
-      (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
-        qemu-system-x86_64 \
-          -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
-          "$@"
-      '')
-      pkgs.wl-clipboard
-      pkgs.qbittorrent
-      pkgs.pavucontrol
-      pkgs.cargo
-      pkgs.gcc
-      pkgs.python3
-      inputs.self.packages.${pkgs.system}.formatter
-      inputs.self.packages.${pkgs.system}.changevolume
-      inputs.self.packages.${pkgs.system}.powermenu
-      inputs.dotman.packages.${pkgs.system}.default
-      pkgs.firefox-bin
-      pkgs.foot
-      pkgs.starship
-      pkgs.tmux
-      pkgs.tmux-sessionizer
-      pkgs.tofi
-      pkgs.waybar
-      pkgs.playerctl
-      pkgs.yazi
-      pkgs.zathura
-      pkgs.obs-studio
-      pkgs.mpv
-      pkgs.feh
-      pkgs.dunst
-      pkgs.libnotify
-      pkgs.udiskie
-      pkgs.networkmanagerapplet
-    ];
   };
 
   programs.dconf.profiles.user.databases = [
@@ -121,6 +52,69 @@
         "networkmanager"
         "wheel"
         "adbusers"
+      ];
+      packages = [
+        # sway
+        pkgs.wl-clip-persist
+        pkgs.findutils
+        pkgs.sway-contrib.grimshot
+        pkgs.xorg.xrdb
+
+        # theming
+        pkgs.adw-gtk3
+        pkgs.adwaita-icon-theme
+        pkgs.qt6Packages.qtstyleplugin-kvantum
+        pkgs.qt6Packages.qt6ct
+        pkgs.libsForQt5.qtstyleplugin-kvantum
+        pkgs.libsForQt5.qt5ct
+
+        # neovim
+        pkgs.neovim
+        pkgs.luajitPackages.jsregexp
+        pkgs.cmake
+        pkgs.unzip
+        pkgs.tree-sitter
+        pkgs.ripgrep
+        pkgs.lua-language-server
+        pkgs.nil
+        pkgs.stylua
+        pkgs.prettierd
+
+        # misc
+        pkgs.xdg-utils
+        pkgs.wget
+        pkgs.file
+        pkgs.fd
+        pkgs.ripgrep
+        pkgs.btop
+        pkgs.wl-clipboard
+        pkgs.qbittorrent
+        pkgs.pavucontrol
+        pkgs.cargo
+        pkgs.gcc
+        pkgs.python3
+        inputs.self.packages.${pkgs.system}.formatter
+        inputs.self.packages.${pkgs.system}.changevolume
+        inputs.self.packages.${pkgs.system}.powermenu
+        inputs.dotman.packages.${pkgs.system}.default
+        pkgs.firefox-bin
+        pkgs.foot
+        pkgs.starship
+        pkgs.tmux
+        pkgs.tmux-sessionizer
+        pkgs.tofi
+        pkgs.waybar
+        pkgs.playerctl
+        pkgs.yazi
+        pkgs.zathura
+        pkgs.obs-studio
+        pkgs.mpv
+        pkgs.feh
+        pkgs.dunst
+        pkgs.libnotify
+        pkgs.udiskie
+        pkgs.networkmanagerapplet
+        pkgs.git
       ];
     };
   };

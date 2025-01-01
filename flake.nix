@@ -30,5 +30,6 @@
         desktop = mkHost "desktop";
       };
       packages.${system} = import ./packages { inherit pkgs; };
+      formatter.${system} = inputs.self.packages.${system}.formatter;
     };
 }
