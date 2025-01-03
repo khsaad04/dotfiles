@@ -1,22 +1,15 @@
 return {
     "neovim/nvim-lspconfig",
-    ft = { "python", "rust", "nix", "lua", "zig", "c" },
+    lazy = false,
     config = function()
         local lspconfig = require("lspconfig")
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
         lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
             on_attach = function(_, bufnr)
-                local nmap = function(keys, func, desc)
-                    if desc then
-                        desc = "LSP: " .. desc
-                    end
-                    vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
-                end
-                nmap("<leader>q", require("telescope.builtin").diagnostics, "[Q]uickfix")
-                nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-                nmap("<space>e", vim.diagnostic.open_float, "Open diagnostic float")
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP: [R]e[n]ame" })
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: [C]ode [A]ction" })
+                vim.diagnostic.enable(false)
             end,
             capabilities = capabilities,
         })
@@ -27,6 +20,8 @@ return {
         end
 
         -- Diagnostics
+        vim.keymap.set("n", "<leader>q", require("telescope.builtin").diagnostics, { desc = "[Q]uickfix" })
+        vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
         local signs = {
             { name = "DiagnosticSignError", text = "" },
             { name = "DiagnosticSignWarn", text = "" },
