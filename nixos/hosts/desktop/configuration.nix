@@ -97,7 +97,7 @@
         inputs.self.packages.${pkgs.system}.changevolume
         inputs.self.packages.${pkgs.system}.powermenu
         inputs.dotman.packages.${pkgs.system}.default
-        pkgs.firefox-bin
+        pkgs.firefox
         pkgs.foot
         pkgs.starship
         pkgs.tmux
