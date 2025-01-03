@@ -25,6 +25,14 @@ return {
             mode = "n",
             desc = "[S]earch by [G]rep",
         },
+        {
+            "<leader>q",
+            function()
+                require("telescope.builtin").diagnostics()
+            end,
+            mode = "n",
+            desc = "[Q]uickfix",
+        },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",

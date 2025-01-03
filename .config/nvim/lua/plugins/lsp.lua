@@ -31,7 +31,6 @@ return {
             },
             severity_sort = true,
         })
-        vim.keymap.set("n", "<leader>q", require("telescope.builtin").diagnostics, { desc = "[Q]uickfix" })
         vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
         vim.keymap.set(
             "n",
