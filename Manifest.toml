@@ -8,11 +8,9 @@ dunst      = {target=".config/dunst/dunstrc",                    template="templ
 foot       = {target=".config/foot/foot.ini",                    template="templates/foot.ini"            }
 gtk3css    = {target=".config/gtk-3.0/gtk.css",                  template="templates/gtk.css"             }
 gtk4css    = {target=".config/gtk-4.0/gtk.css",                  template="templates/gtk.css"             }
-hyprland   = {target=".config/hypr/hyprland.conf",               template="templates/hyprland.conf"       }
 nvim       = {target=".config/nvim/lua/plugins/colorscheme.lua", template="templates/nvim-colorscheme.lua"}
 sway       = {target=".config/sway/config",                      template="templates/sway-config"         }
 tmux       = {target=".config/tmux/tmux.conf",                   template="templates/tmux.conf"           }
 tofi       = {target=".config/tofi/config",                      template="templates/tofi-config"         }
 waybar     = {target=".config/waybar/style.css",                 template="templates/waybar-style.css"    }
-wofi       = {target=".config/wofi/style.css",                   template="templates/wofi-style.css"      }
 starship   = {target=".config/starship.toml",                    template="templates/starship.toml"       }
