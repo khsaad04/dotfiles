@@ -1,10 +1,11 @@
 {
   imports = [
     ./boot.nix
-    ./sound.nix
+    ./fonts.nix
+    ./greetd.nix
+    ./input.nix
     ./nh.nix
     ./nixconf.nix
-    ./greetd.nix
-    ./fonts.nix
+    ./sound.nix
   ];
 }

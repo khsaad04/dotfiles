@@ -8,7 +8,17 @@
   programs = {
     sway = {
       enable = true;
-      extraPackages = lib.mkForce [ ];
+      extraPackages = lib.mkForce [
+        pkgs.sway-contrib.grimshot
+        pkgs.findutils
+        pkgs.xorg.xrdb
+        pkgs.tofi
+        pkgs.waybar
+        pkgs.playerctl
+        pkgs.networkmanagerapplet
+        pkgs.dunst
+        pkgs.libnotify
+      ];
     };
     command-not-found.enable = false;
     nix-ld.enable = true;
@@ -54,12 +64,6 @@
         "adbusers"
       ];
       packages = [
-        # sway
-        pkgs.wl-clip-persist
-        pkgs.findutils
-        pkgs.sway-contrib.grimshot
-        pkgs.xorg.xrdb
-
         # theming
         pkgs.adw-gtk3
         pkgs.adwaita-icon-theme
@@ -80,51 +84,41 @@
         pkgs.stylua
         pkgs.prettierd
 
-        # misc
-        pkgs.xdg-utils
+        # devel tools
         pkgs.wget
         pkgs.file
         pkgs.fd
         pkgs.ripgrep
-        pkgs.btop
-        pkgs.wl-clipboard
-        pkgs.qbittorrent
-        pkgs.pavucontrol
         pkgs.cargo
         pkgs.gcc
         pkgs.python3
-        inputs.self.packages.${pkgs.system}.formatter
-        inputs.self.packages.${pkgs.system}.changevolume
-        inputs.self.packages.${pkgs.system}.powermenu
-        inputs.dotman.packages.${pkgs.system}.default
-        pkgs.firefox
+        pkgs.git
+
+        # console
         pkgs.foot
         pkgs.starship
         pkgs.tmux
         pkgs.tmux-sessionizer
-        pkgs.tofi
-        pkgs.waybar
-        pkgs.playerctl
+
+        # misc
+        pkgs.firefox
+        pkgs.xdg-utils
+        pkgs.btop
+        pkgs.wl-clipboard
+        pkgs.wl-clip-persist
+        pkgs.qbittorrent
+        pkgs.pavucontrol
         pkgs.yazi
         pkgs.zathura
         pkgs.obs-studio
         pkgs.mpv
         pkgs.feh
-        pkgs.dunst
-        pkgs.libnotify
         pkgs.udiskie
-        pkgs.networkmanagerapplet
-        pkgs.git
+        inputs.self.packages.${pkgs.system}.formatter
+        inputs.self.packages.${pkgs.system}.changevolume
+        inputs.self.packages.${pkgs.system}.powermenu
+        inputs.dotman.packages.${pkgs.system}.default
       ];
-    };
-  };
-
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5.addons = [ pkgs.fcitx5-openbangla-keyboard ];
     };
   };
 
