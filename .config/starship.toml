@@ -23,5 +23,5 @@ symbol = " "
 format = " took [$duration]($style)"
 
 [character]
-error_symbol = "[❯](bold #ffb4ab)"
-success_symbol = "[❯](bold #c5cd7a)"
+error_symbol = "[](bold #ffb4ab)"
+success_symbol = "[](bold #c5cd7a)"
