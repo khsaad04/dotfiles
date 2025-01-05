@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    cmd = { "ConformInfo" },
+    event = "VeryLazy",
     keys = {
         {
             "<leader>lf",
@@ -11,22 +11,30 @@ return {
             desc = "Format current buffer using conform-nvim",
         },
     },
-    opts = {
-        formatters = {
-            nix_formatter = {
-                command = "formatter",
-                args = { "$FILENAME" },
-                stdin = false,
+    init = function()
+        vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+    end,
+    config = function()
+        require("conform").setup({
+            default_format_opts = {
+                lsp_format = "fallback",
             },
-        },
-        formatters_by_ft = {
-            nix = { "nix_formatter" },
-            lua = { "stylua" },
-            python = { "ruff_format" },
-            c = { "clang-format" },
-            html = { "prettierd" },
-            javascript = { "prettierd" },
-            css = { "prettierd" },
-        },
-    },
+            formatters = {
+                nix_formatter = {
+                    command = "formatter",
+                    args = { "$FILENAME" },
+                    stdin = false,
+                },
+            },
+            formatters_by_ft = {
+                nix = { "nix_formatter" },
+                lua = { "stylua" },
+                python = { "ruff_format" },
+                c = { "clang-format" },
+                html = { "prettierd" },
+                javascript = { "prettierd" },
+                css = { "prettierd" },
+            },
+        })
+    end,
 }
