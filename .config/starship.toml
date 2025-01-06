@@ -17,11 +17,3 @@ disabled = true
 [git_branch]
 format = " [$symbol$branch(:$remote_branch)]($style) "
 style = "bold #e1e994"
-symbol = " "
-
-[cmd_duration]
-format = " took [$duration]($style)"
-
-[character]
-error_symbol = "[](bold #ffb4ab)"
-success_symbol = "[](bold #c5cd7a)"
