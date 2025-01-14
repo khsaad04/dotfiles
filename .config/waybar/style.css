@@ -50,16 +50,16 @@ tooltip {
 
 #workspaces button.active,
 #workspaces button.focused {
-  background-color: #e1e994;
+  background-color: #e5e3d6;
 }
 
 #workspaces button label {
-  color: #e1e994;
+  color: #e5e3d6;
 }
 
 #workspaces button.active label,
 #workspaces button.focused label {
-  color: #1a1d00;
+  color: #35352d;
 }
 
 #mpris {
@@ -114,7 +114,7 @@ tooltip {
 #memory,
 #clock,
 #tray {
-  color: #e1e994;
+  color: #e5e3d6;
   background-color: #35352d;
   border-radius: 2px;
   margin: 2px 2px;
