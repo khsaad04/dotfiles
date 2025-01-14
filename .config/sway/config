@@ -8,8 +8,8 @@ exec {
   nm-applet --indicator &
   dunst &
   wl-clip-persist -c regular &
-  fcitx5
-  udiskie -t
+  fcitx5 &
+  udiskie -t &
 }
 
 ### Variables
@@ -61,7 +61,7 @@ input "type:keyboard" {
 }
 
 seat "*" {
-    xcursor_theme Adwaita 10
+    xcursor_theme Adwaita 16
 }
 
 ### Key bindings
