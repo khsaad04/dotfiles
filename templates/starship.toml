@@ -1,9 +1,9 @@
-format = "[](fg:#{{primary}})$username[](fg:#{{primary}} bg:#{{primary_container}})$directory[](fg:#{{primary_container}})$all$cmd_duration\n$character"
+format = "[](fg:#{{primary_fixed_dim}})$username[](fg:#{{primary_fixed_dim}} bg:#{{primary_container}})$directory[](fg:#{{primary_container}})$all$cmd_duration\n$character"
 
 [username]
 format = "[$user]($style)"
-style_root = "bold fg:#{{on_primary}} bg:#{{primary}}"
-style_user = "bold fg:#{{on_primary}} bg:#{{primary}}"
+style_root = "bold fg:#{{on_primary_fixed}} bg:#{{primary_fixed_dim}}"
+style_user = "bold fg:#{{on_primary_fixed}} bg:#{{primary_fixed_dim}}"
 show_always = true
 
 [directory]

@@ -2,8 +2,8 @@ format = "[](fg:#c5cd7a)$username[](fg:#c5cd7a bg:#444b04)$directory[](
 
 [username]
 format = "[$user]($style)"
-style_root = "bold fg:#2f3300 bg:#c5cd7a"
-style_user = "bold fg:#2f3300 bg:#c5cd7a"
+style_root = "bold fg:#1a1d00 bg:#c5cd7a"
+style_user = "bold fg:#1a1d00 bg:#c5cd7a"
 show_always = true
 
 [directory]

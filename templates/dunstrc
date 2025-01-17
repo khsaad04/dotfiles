@@ -11,18 +11,18 @@ frame_color="#929282"
 markup="full"
 
 [urgency_low]
-background="#35352d"
-foreground="#c5cd7a"
-highlight="#c5cd7a"
+background="#{{surface_container_highest}}"
+foreground="#{{primary_fixed_dim}}"
+highlight="#{{primary_fixed_dim}}"
 timeout=10
 
 [urgency_normal]
-background="#35352d"
-foreground="#c5cd7a"
-highlight="#c5cd7a"
+background="#{{surface_container_highest}}"
+foreground="#{{primary_fixed_dim}}"
+highlight="#{{primary_fixed_dim}}"
 timeout=10
 
 [urgency_critical]
-background="#ffb4ab"
-foreground="#690005"
+background="#{{error}}"
+foreground="#{{on_error}}"
 timeout=0
