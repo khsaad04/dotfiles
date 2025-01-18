@@ -12,14 +12,14 @@ markup="full"
 
 [urgency_low]
 background="#35352d"
-foreground="#c5cd7a"
-highlight="#c5cd7a"
+foreground="#e5e3d6"
+highlight="#e5e3d6"
 timeout=10
 
 [urgency_normal]
 background="#35352d"
-foreground="#c5cd7a"
-highlight="#c5cd7a"
+foreground="#e5e3d6"
+highlight="#e5e3d6"
 timeout=10
 
 [urgency_critical]

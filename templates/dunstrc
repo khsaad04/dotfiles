@@ -12,14 +12,14 @@ markup="full"
 
 [urgency_low]
 background="#{{surface_container_highest}}"
-foreground="#{{primary_fixed_dim}}"
-highlight="#{{primary_fixed_dim}}"
+foreground="#{{on_surface}}"
+highlight="#{{on_surface}}"
 timeout=10
 
 [urgency_normal]
 background="#{{surface_container_highest}}"
-foreground="#{{primary_fixed_dim}}"
-highlight="#{{primary_fixed_dim}}"
+foreground="#{{on_surface}}"
+highlight="#{{on_surface}}"
 timeout=10
 
 [urgency_critical]

@@ -28,9 +28,9 @@ set {
 ### Appearance
 # class                   border      background  text        indicator   child_border
 client.background                     #13140c 
-client.focused            #13140c     #35352d     #c5cd7a     #13140c     #13140c
-client.focused_inactive   #13140c     #35352d     #c5cd7a     #13140c     #13140c
-client.focused_tab_title  #13140c     #35352d     #c5cd7a
+client.focused            #13140c     #35352d     #e5e3d6     #13140c     #13140c
+client.focused_inactive   #13140c     #35352d     #e5e3d6     #13140c     #13140c
+client.focused_tab_title  #13140c     #35352d     #e5e3d6
 client.unfocused          #13140c     #13140c     #e5e3d6     #13140c     #13140c
 client.urgent             #13140c     #13140c     #ffb4ab     #13140c     #13140c
 client.placeholder        #13140c     #13140c     #ffb4ab     #13140c     #13140c

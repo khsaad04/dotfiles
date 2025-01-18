@@ -1,6 +1,6 @@
-@define-color accent_color #{{primary_fixed_dim}};
-@define-color accent_fg_color #{{on_primary_fixed}};
-@define-color accent_bg_color #{{primary_fixed_dim}};
+@define-color accent_color #{{primary}};
+@define-color accent_fg_color #{{on_primary}};
+@define-color accent_bg_color #{{primary}};
 @define-color window_bg_color #{{surface_dim}};
 @define-color window_fg_color #{{on_surface}};
 @define-color headerbar_bg_color #{{surface_dim}};

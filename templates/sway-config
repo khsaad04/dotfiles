@@ -28,9 +28,9 @@ set {
 ### Appearance
 # class                   border      background  text        indicator   child_border
 client.background                     #{{surface}} 
-client.focused            #{{surface}}     #{{surface_container_highest}}     #{{primary_fixed_dim}}     #{{surface}}     #{{surface}}
-client.focused_inactive   #{{surface}}     #{{surface_container_highest}}     #{{primary_fixed_dim}}     #{{surface}}     #{{surface}}
-client.focused_tab_title  #{{surface}}     #{{surface_container_highest}}     #{{primary_fixed_dim}}
+client.focused            #{{surface}}     #{{surface_container_highest}}     #{{on_surface}}     #{{surface}}     #{{surface}}
+client.focused_inactive   #{{surface}}     #{{surface_container_highest}}     #{{on_surface}}     #{{surface}}     #{{surface}}
+client.focused_tab_title  #{{surface}}     #{{surface_container_highest}}     #{{on_surface}}
 client.unfocused          #{{surface}}     #{{surface}}     #{{on_surface}}     #{{surface}}     #{{surface}}
 client.urgent             #{{surface}}     #{{surface}}     #{{error}}     #{{surface}}     #{{surface}}
 client.placeholder        #{{surface}}     #{{surface}}     #{{error}}     #{{surface}}     #{{surface}}
