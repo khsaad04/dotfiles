@@ -27,13 +27,9 @@ set {
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
-client.background                     #13140c 
-client.focused            #13140c     #35352d     #e5e3d6     #13140c     #13140c
-client.focused_inactive   #13140c     #35352d     #e5e3d6     #13140c     #13140c
-client.focused_tab_title  #13140c     #35352d     #e5e3d6
-client.unfocused          #13140c     #13140c     #e5e3d6     #13140c     #13140c
-client.urgent             #13140c     #13140c     #ffb4ab     #13140c     #13140c
-client.placeholder        #13140c     #13140c     #ffb4ab     #13140c     #13140c
+client.focused            #35352d     #35352d     #e5e3d6     #c5cd7a     #35352d
+client.focused_inactive   #46492e     #46492e     #e4e5c1     #c7c9a6     #46492e
+client.unfocused          #202018     #202018     #e5e3d6     #202018     #202018
 
 font pango:Iosevka 8 
 gaps {
