@@ -57,10 +57,10 @@
       pkgs.unzip
       pkgs.tree-sitter
       pkgs.ripgrep
+
+      # language servers
       pkgs.lua-language-server
       pkgs.nil
-      pkgs.stylua
-      pkgs.prettierd
 
       # devel tools
       pkgs.wget

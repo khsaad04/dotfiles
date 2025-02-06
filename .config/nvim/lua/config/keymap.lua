@@ -39,3 +39,5 @@ map("n", "yo", function()
     vim.api.nvim_set_current_line(text)
     vim.api.nvim_win_set_cursor(0, { pos[1] + 1, pos[2] })
 end, { desc = "Copy line below and save cursor position" })
+
+map("n", "<leader>lf", vim.lsp.buf.format)
