@@ -1,8 +1,4 @@
 return {
-    { -- Automatically detect and change indent size
-        "tpope/vim-sleuth",
-        event = "VeryLazy",
-    },
     { -- Show Git signs on the signcolumn
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
