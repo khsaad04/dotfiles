@@ -12,10 +12,7 @@ tooltip,
 #custom-power,
 #custom-launcher {
   all: initial;
-  font-family:
-    Iosevka,
-    Symbols Nerd Font,
-    Noto Sans Bengali;
+  font-family: Iosevka;
   font-size: 10px;
 }
 
@@ -64,15 +61,15 @@ tooltip {
 
 #mpris {
   color: #{{background}};
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   padding: 0px 3px;
 }
 
 #mpris.player {
   font-size: 12px;
   margin-right: 0px;
-  margin-left: 3px;
+  margin-left: 2px;
   border-radius: 2px 0 0 2px;
 }
 
@@ -91,7 +88,7 @@ tooltip {
 #mpris.next {
   font-size: 12px;
   border-radius: 0 2px 2px 0;
-  margin-right: 3px;
+  margin-right: 2px;
 }
 
 #mpris.spotify {
