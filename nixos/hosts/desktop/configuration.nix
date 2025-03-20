@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   inputs,
   ...
@@ -8,7 +7,7 @@
   programs = {
     sway = {
       enable = true;
-      extraPackages = lib.mkForce [
+      extraPackages = [
         pkgs.sway-contrib.grimshot
         pkgs.findutils
         pkgs.xorg.xrdb
@@ -61,7 +60,6 @@
       # language servers
       pkgs.lua-language-server
       pkgs.nil
-
       # devel tools
       pkgs.wget
       pkgs.file
