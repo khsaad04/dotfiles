@@ -1,7 +1,7 @@
 {
   programs.nh = {
     enable = true;
-    flake = "/home/khsaad/Programming/dotfiles";
+    flake = "/home/khsaad/dotfiles";
     clean = {
       enable = true;
       extraArgs = "--nogc --nogcroots";

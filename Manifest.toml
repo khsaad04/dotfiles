@@ -1,15 +1,15 @@
-wallpaper = ".config/wallpapers/wp.jpg"
+wallpaper = "configs/.config/wallpapers/wp.jpg"
 
 [files]
-config     = {target=".config/[!.]*",                            dest="~/.config/"                                                            }
-firefox    = {target=".config/.mozilla",                         dest="~/"                                                                    }
-dunst      = {target=".config/dunst/dunstrc",                    dest="~/.config/dunst/",            template="templates/dunstrc"             }
-foot       = {target=".config/foot/foot.ini",                    dest="~/.config/foot/",             template="templates/foot.ini"            }
-gtk3css    = {target=".config/gtk-3.0/gtk.css",                  dest="~/.config/gtk-3.0/",          template="templates/gtk.css"             }
-gtk4css    = {target=".config/gtk-4.0/gtk.css",                  dest="~/.config/gtk-4.0/",          template="templates/gtk.css"             }
-nvim       = {target=".config/nvim/lua/plugins/colorscheme.lua", dest="~/.config/nvim/lua/plugins/", template="templates/nvim-colorscheme.lua"}
-sway       = {target=".config/sway/config",                      dest="~/.config/sway/",             template="templates/sway-config"         }
-tmux       = {target=".config/tmux/tmux.conf",                   dest="~/.config/tmux/",             template="templates/tmux.conf"           }
-tofi       = {target=".config/tofi/config",                      dest="~/.config/tofi/",             template="templates/tofi-config"         }
-waybar     = {target=".config/waybar/style.css",                 dest="~/.config/waybar/",           template="templates/waybar-style.css"    }
-starship   = {target=".config/starship.toml",                    dest="~/.config/",                  template="templates/starship.toml"       }
+config     = {target="configs/.config",                                  dest="~/"                                                                     }
+firefox    = {target="configs/.mozilla",                                 dest="~/"                                                                     }
+dunst      = {target="configs/.config/dunst/dunstrc",                    dest="~/.config/dunst/",            template="templates/dunstrc"              }
+foot       = {target="configs/.config/foot/foot.ini",                    dest="~/.config/foot/",             template="templates/foot.ini"             }
+gtk3css    = {target="configs/.config/gtk-3.0/gtk.css",                  dest="~/.config/gtk-3.0/",          template="templates/gtk.css"              }
+gtk4css    = {target="configs/.config/gtk-4.0/gtk.css",                  dest="~/.config/gtk-4.0/",          template="templates/gtk.css"              }
+nvim       = {target="configs/.config/nvim/lua/plugins/colorscheme.lua", dest="~/.config/nvim/lua/plugins/", template="templates/nvim-colorscheme.lua" }
+sway       = {target="configs/.config/sway/config",                      dest="~/.config/sway/",             template="templates/sway-config"          }
+tmux       = {target="configs/.config/tmux/tmux.conf",                   dest="~/.config/tmux/",             template="templates/tmux.conf"            }
+tofi       = {target="configs/.config/tofi/config",                      dest="~/.config/tofi/",             template="templates/tofi-config"          }
+waybar     = {target="configs/.config/waybar/style.css",                 dest="~/.config/waybar/",           template="templates/waybar-style.css"     }
+starship   = {target="configs/.config/starship.toml",                    dest="~/.config/",                  template="templates/starship.toml"        }
