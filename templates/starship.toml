@@ -1,4 +1,4 @@
-format = "[](fg:#{{primary}})$username[](fg:#{{primary}} bg:#{{primary_container}})$directory[](fg:#{{primary_container}})$all$cmd_duration\n$character"
+format = "[](fg:#{{primary}})$username[](fg:#{{primary}} bg:#{{primary_container}})$directory[](fg:#{{primary_container}})$all $cmd_duration\n$character"
 
 [username]
 format = "[$user]($style)"
