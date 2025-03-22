@@ -1,4 +1,4 @@
-format = "[](fg:#c5cd7a)$username[](fg:#c5cd7a bg:#444b04)$directory[](fg:#444b04)$all$cmd_duration\n$character"
+format = "[](fg:#c5cd7a)$username[](fg:#c5cd7a bg:#444b04)$directory[](fg:#444b04)$all $cmd_duration\n$character"
 
 [username]
 format = "[$user]($style)"

@@ -8,7 +8,7 @@ writeShellApplication {
 
     case "$selected" in
         exit)
-            hyprctl dispatch exit || swaymsg exit;;
+            swaymsg exit;;
         shutdown)
             systemctl poweroff;;
         suspend)

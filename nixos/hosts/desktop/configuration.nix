@@ -60,6 +60,7 @@
       # language servers
       pkgs.lua-language-server
       pkgs.nil
+
       # devel tools
       pkgs.wget
       pkgs.file
@@ -113,7 +114,6 @@
       initialPassword = "khsaad";
       description = "KH Saad";
       extraGroups = [
-        "networkmanager"
         "wheel"
         "adbusers"
       ];

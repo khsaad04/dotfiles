@@ -6,7 +6,6 @@
     "margin": 0,
     "modules-left": [
       "custom/launcher",
-      "hyprland/workspaces",
       "sway/workspaces",
       "mpris#player",
       "mpris#prev",
@@ -14,7 +13,6 @@
       "mpris#next",
     ],
     "modules-center": [
-      "hyprland/window",
       "sway/window"
     ],
     "modules-right": [
@@ -31,15 +29,6 @@
         "justify": "center",
         "on-click": "tofi-drun --terminal=footclient | xargs -r swaymsg exec --",
         "tooltip": false
-    },
-    "hyprland/workspaces": {
-        "on-click": "activate",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "on-scroll-up": "hyprctl dispatch workspace e+1"
-    },
-    "hyprland/window": {
-        "icon": true,
-        "icon-size": 12,
     },
     "sway/window": {
         "tooltip": false,
