@@ -1,7 +1,7 @@
 status is-interactive; and begin
     # Aliases
     alias l 'ls -lah'
-    alias t 'tmux attach || tmux new-session -s main tms'
+    alias t 'tmux a || tmux new -s main'
     alias y yazi
     alias vi nvim
     alias vim nvim
