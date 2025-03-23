@@ -93,7 +93,6 @@
       inputs.self.packages.${pkgs.system}.formatter
       inputs.self.packages.${pkgs.system}.changevolume
       inputs.self.packages.${pkgs.system}.powermenu
-      # inputs.dotman.packages.${pkgs.system}.default
     ];
   };
 

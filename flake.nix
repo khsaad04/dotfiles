@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    dotman.url = "github:khsaad04/dotman";
   };
 
   outputs =
