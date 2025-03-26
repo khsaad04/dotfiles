@@ -1,4 +1,4 @@
-wallpaper = "configs/.config/wallpapers/wp.jpg"
+wallpaper = "configs/wallpapers/wp.jpg"
 
 [files]
 config     = {target="configs/.config",                                  dest="~/"                                                                     }

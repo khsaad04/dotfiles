@@ -2,7 +2,7 @@
 writeShellApplication {
   name = "changevolume";
   text = ''
-    icon_path="$HOME/.config/icons"
+    icon_path="$HOME/dotfiles/configs/icons"
     amount=''${2:-5}
     id_output="8052"
     timeout=2000
