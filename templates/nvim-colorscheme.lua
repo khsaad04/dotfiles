@@ -9,6 +9,10 @@ return {
                     dark1 = "#{{surface_container_low}}",
                     dark2 = "#{{surface_container}}",
                 },
+                overrides = {
+                    StatusLine = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" },
+                    StatusLineNC = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" }
+                }
             })
         else
             require("gruvbox").setup({
@@ -17,6 +21,10 @@ return {
                     light1 = "#{{surface_container_low}}",
                     light2 = "#{{surface_container}}",
                 },
+                overrides = {
+                    StatusLine = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" },
+                    StatusLineNC = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" }
+                }
             })
         end
         vim.opt.background = "{{theme}}"
