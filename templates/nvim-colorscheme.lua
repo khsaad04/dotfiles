@@ -11,8 +11,8 @@ return {
                 },
                 overrides = {
                     StatusLine = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" },
-                    StatusLineNC = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" }
-                }
+                    StatusLineNC = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" },
+                },
             })
         else
             require("gruvbox").setup({
@@ -23,8 +23,8 @@ return {
                 },
                 overrides = {
                     StatusLine = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" },
-                    StatusLineNC = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" }
-                }
+                    StatusLineNC = { bg = "#{{surface_container}}", fg = "#{{on_surface}}" },
+                },
             })
         end
         vim.opt.background = "{{theme}}"
