@@ -1,19 +1,18 @@
-status is-interactive; and begin
-    # Aliases
-    alias l 'ls -lah'
-    alias t 'tmux a || tmux new -s main'
-    alias y yazi
-    alias vi nvim
-    alias vim nvim
-    alias vimdiff "nvim -d"
+set fish_greeting
 
-    # Interactive shell initialisation
-    set fish_greeting
-    fish_vi_key_bindings
-    fish_add_path -aP ~/.cargo/bin
+# Aliases
+alias l 'ls -lah'
+alias t 'tmux a || tmux new -s main'
+alias y yazi
+alias vi nvim
+alias vim nvim
+alias vimdiff "nvim -d"
 
-    if test "$TERM" != dumb
-        eval (starship init fish)
-        enable_transience
-    end
+# Path
+fish_add_path -aP ~/.cargo/bin
+
+if status is-interactive
+    # Prompt
+    starship init fish | source
+    enable_transience
 end
