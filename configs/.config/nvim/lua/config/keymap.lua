@@ -39,3 +39,14 @@ map("n", "yo", function()
     vim.api.nvim_set_current_line(text)
     vim.api.nvim_win_set_cursor(0, { pos[1] + 1, pos[2] })
 end, { desc = "Copy line below and save cursor position" })
+
+-- Lsp & Diagnostics keymaps
+map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Lsp Format" })
+map("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+map(
+    "n",
+    "<leader>td",
+    "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>",
+    { desc = "[T]oggle [D]iagnostics" }
+)
