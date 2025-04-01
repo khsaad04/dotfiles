@@ -7,14 +7,14 @@ return {
         if "{{theme}}" == "dark" then
             palette = {
                 dark0 = "#{{surface}}",
-                dark1 = "#{{surface_container_low}}",
-                dark2 = "#{{surface_container}}",
+                dark1 = "#{{surface_container}}",
+                dark2 = "#{{surface_container_highest}}",
             }
         else
             palette = {
                 light0 = "#{{surface}}",
-                light1 = "#{{surface_container_low}}",
-                light2 = "#{{surface_container}}",
+                light1 = "#{{surface_container}}",
+                light2 = "#{{surface_container_highest}}",
             }
         end
         require("gruvbox").setup({

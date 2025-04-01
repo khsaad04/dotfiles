@@ -33,4 +33,7 @@ return {
         },
         { "<leader>sh", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
     },
+    config = function()
+        vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "SnacksPickerFile" })
+    end
 }

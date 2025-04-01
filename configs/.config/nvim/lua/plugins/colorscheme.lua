@@ -7,14 +7,14 @@ return {
         if "dark" == "dark" then
             palette = {
                 dark0 = "#13140c",
-                dark1 = "#1c1c14",
-                dark2 = "#202018",
+                dark1 = "#202018",
+                dark2 = "#35352d",
             }
         else
             palette = {
                 light0 = "#13140c",
-                light1 = "#1c1c14",
-                light2 = "#202018",
+                light1 = "#202018",
+                light2 = "#35352d",
             }
         end
         require("gruvbox").setup({
