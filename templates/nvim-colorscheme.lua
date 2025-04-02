@@ -1,6 +1,7 @@
 return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
+    lazy = false,
     config = function()
         vim.opt.background = "{{theme}}"
         local palette
