@@ -1,8 +1,8 @@
 -- Lsp
-vim.lsp.enable({ "clangd", "luals", "nil_ls", "pylsp", "ruff", "rust-analyzer", })
+vim.lsp.enable({ "clangd", "luals", "nil_ls", "pylsp", "ruff", "rust-analyzer" })
 
 -- Diagnostics
-vim.diagnostic.config {
+vim.diagnostic.config({
     severity_sort = true,
     signs = {
         text = {
@@ -12,5 +12,5 @@ vim.diagnostic.config {
             [vim.diagnostic.severity.HINT] = "",
         },
     },
-}
+})
 vim.diagnostic.enable(false)

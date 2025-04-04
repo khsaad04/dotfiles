@@ -3,5 +3,5 @@ return {
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = { "rafamadriz/friendly-snippets" },
     build = "nix run .#build-plugin",
-    opts = {}
+    opts = {},
 }

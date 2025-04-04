@@ -2,7 +2,7 @@ return {
     { -- Show Git signs on the signcolumn
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
-        opts = {}
+        opts = {},
     },
     { -- Git client
         "tpope/vim-fugitive",

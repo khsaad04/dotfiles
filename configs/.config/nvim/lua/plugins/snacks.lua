@@ -9,31 +9,36 @@ return {
             "<leader>sf",
             function()
                 Snacks.picker.files({
-                    hidden = true
+                    hidden = true,
                 })
             end,
-            desc = "[S]earch [F]iles"
+            desc = "[S]earch [F]iles",
         },
         {
             "<leader>sg",
             function()
                 Snacks.picker.grep({
-                    hidden = true
+                    hidden = true,
                 })
             end,
-            desc = "[S]earch by [G]rep"
+            desc = "[S]earch by [G]rep",
         },
         {
             "<C-e>",
             function()
-                Snacks.explorer(
-                    { hidden = true })
+                Snacks.explorer({ hidden = true })
             end,
-            desc = "File Explorer"
+            desc = "File Explorer",
         },
-        { "<leader>sh", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
+        {
+            "<leader>sh",
+            function()
+                Snacks.picker.help()
+            end,
+            desc = "[S]earch [H]elp",
+        },
     },
     config = function()
         vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "SnacksPickerFile" })
-    end
+    end,
 }
