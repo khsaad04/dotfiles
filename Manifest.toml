@@ -7,7 +7,7 @@ dunst      = {target="configs/.config/dunst/dunstrc",                    dest="~
 foot       = {target="configs/.config/foot/foot.ini",                    dest="~/.config/foot/",             template="templates/foot.ini"             }
 gtk3css    = {target="configs/.config/gtk-3.0/gtk.css",                  dest="~/.config/gtk-3.0/",          template="templates/gtk.css"              }
 gtk4css    = {target="configs/.config/gtk-4.0/gtk.css",                  dest="~/.config/gtk-4.0/",          template="templates/gtk.css"              }
-nvim       = {target="configs/.config/nvim/lua/plugins/gruvbox.lua",     dest="~/.config/nvim/lua/plugins/", template="templates/nvim-colorscheme.lua" }
+nvim       = {target="configs/.config/nvim/lua/khsaad/colorscheme.lua",  dest="~/.config/nvim/lua/khsaad/",  template="templates/nvim-colorscheme.lua" }
 sway       = {target="configs/.config/sway/config",                      dest="~/.config/sway/",             template="templates/sway-config"          }
 tmux       = {target="configs/.config/tmux/tmux.conf",                   dest="~/.config/tmux/",             template="templates/tmux.conf"            }
 tofi       = {target="configs/.config/tofi/config",                      dest="~/.config/tofi/",             template="templates/tofi-config"          }
