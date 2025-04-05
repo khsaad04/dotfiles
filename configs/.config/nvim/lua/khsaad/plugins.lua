@@ -10,7 +10,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         lazy = false,
-        build = ":TSInstall all",
+        build = ":TSUpdate",
         opts = {
             highlight = {
                 enable = true,
