@@ -1,4 +1,5 @@
 set fish_greeting
+set -gx RIPGREP_CONFIG_PATH ~/.config/ripgreprc
 
 # Aliases
 alias l 'ls -lah'
