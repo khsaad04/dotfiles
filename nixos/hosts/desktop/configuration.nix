@@ -17,6 +17,8 @@
         pkgs.networkmanagerapplet
         pkgs.dunst
         pkgs.libnotify
+        pkgs.wl-clipboard
+        pkgs.wl-clip-persist
       ];
     };
     command-not-found.enable = false;
@@ -51,15 +53,16 @@
 
       # neovim
       pkgs.neovim
-      pkgs.luajitPackages.jsregexp
       pkgs.cmake
       pkgs.unzip
       pkgs.tree-sitter
       pkgs.ripgrep
 
-      # language servers
+      # language servers & formatters
       pkgs.lua-language-server
       pkgs.nil
+      pkgs.stylua
+      inputs.self.packages.${pkgs.system}.formatter
 
       # devel tools
       pkgs.wget
@@ -70,6 +73,7 @@
       pkgs.gcc
       pkgs.python3
       pkgs.git
+      pkgs.hyperfine
 
       # console
       pkgs.foot
@@ -80,8 +84,6 @@
       pkgs.firefox
       pkgs.xdg-utils
       pkgs.btop
-      pkgs.wl-clipboard
-      pkgs.wl-clip-persist
       pkgs.qbittorrent
       pkgs.pavucontrol
       pkgs.yazi
@@ -90,7 +92,6 @@
       pkgs.mpv
       pkgs.feh
       pkgs.udiskie
-      inputs.self.packages.${pkgs.system}.formatter
       inputs.self.packages.${pkgs.system}.changevolume
       inputs.self.packages.${pkgs.system}.powermenu
     ];
