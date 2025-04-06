@@ -1,4 +1,9 @@
 -- Lsp
+vim.lsp.config("*", {
+    root_markers = { ".git" },
+    single_file_support = true,
+})
+
 vim.lsp.enable({
     "clangd",
     "luals",

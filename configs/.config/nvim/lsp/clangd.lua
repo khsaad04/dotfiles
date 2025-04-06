@@ -1,6 +1,5 @@
 return {
     cmd = { "clangd" },
-    filetypes = { "c", "cpp", "h" },
+    filetypes = { "c", "cpp" },
     root_markers = { ".clang-format" },
-    single_file_support = true,
 }
