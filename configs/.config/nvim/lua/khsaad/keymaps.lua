@@ -16,6 +16,9 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==")
+map("n", "<A-k>", "<cmd>m .-2<cr>==")
+
 map("v", "<A-j>", ":m '>+1<cr>gv=gv")
 map("v", "<A-k>", ":m '<-2<cr>gv=gv")
 

@@ -1,19 +1,11 @@
-vim.opt.background = "dark"
 
-local palette
-if "dark" == "dark" then
-    palette = {
-        dark0 = "#13140c",
-        dark1 = "#202018",
-        dark2 = "#35352d",
-    }
-else
-    palette = {
-        light0 = "#13140c",
-        light1 = "#202018",
-        light2 = "#35352d",
-    }
-end
+local palette = {
+    dark0 = "#13140c",
+    dark1 = "#202018",
+    dark2 = "#35352d",
+}
+
+
 require("gruvbox").setup({
     palette_overrides = palette,
     overrides = {
