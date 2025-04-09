@@ -46,15 +46,9 @@
       # theming
       pkgs.adw-gtk3
       pkgs.adwaita-icon-theme
-      pkgs.qt6Packages.qtstyleplugin-kvantum
-      pkgs.qt6Packages.qt6ct
-      pkgs.libsForQt5.qtstyleplugin-kvantum
-      pkgs.libsForQt5.qt5ct
 
       # neovim
       pkgs.neovim
-      pkgs.cmake
-      pkgs.unzip
       pkgs.tree-sitter
       pkgs.ripgrep
 
@@ -74,6 +68,7 @@
       pkgs.python3
       pkgs.git
       pkgs.hyperfine
+      pkgs.unzip
 
       # console
       pkgs.foot
