@@ -1,8 +1,6 @@
-include /etc/sway/config.d/*
-
 ### Exec stuff
-bar swaybar_command waybar
 exec {
+  pipewire &
   firefox &
   foot --server &
   nm-applet --indicator &
@@ -31,7 +29,7 @@ client.focused            #35352d     #35352d     #e5e3d6     #c5cd7a     #35352
 client.focused_inactive   #46492e     #46492e     #e4e5c1     #c7c9a6     #46492e
 client.unfocused          #202018     #202018     #e5e3d6     #202018     #202018
 
-font pango:Iosevka 8 
+font Iosevka 10 
 gaps {
   inner 2
   outer 2
@@ -41,7 +39,7 @@ default_floating_border none
 smart_gaps on
 
 ### Window Rules
-assign [app_id="firefox"] 2
+assign [app_id="Firefox"] 2
 
 ### Output configuration
 output * bg /home/khsaad/dotfiles/configs/wallpapers/wp.jpg fill
@@ -64,7 +62,7 @@ bindsym {
   $mod+q kill
   $mod+space exec $menu
   $mod+Shift+c reload
-  $mod+x exec powermenu
+  $mod+x exec ~/.config/scripts/powermenu
 
   # Moving around:
   $mod+$left focus left
@@ -130,9 +128,9 @@ bindsym {
   $mod+minus scratchpad show
 
   # Screenshot and Volume
-  --no-repeat Print exec grimshot --notify savecopy
-  --no-repeat Shift+Print exec grimshot --notify savecopy area
-  --no-repeat Ctrl+Print exec grimshot --notify savecopy window
+  Print exec grimshot --notify savecopy
+  Shift+Print exec grimshot --notify savecopy area
+  Ctrl+Print exec grimshot --notify savecopy window
   XF86AudioRaiseVolume exec $HOME/.config/scripts/changevolume up 5
   XF86AudioLowerVolume exec $HOME/.config/scripts/changevolume down 5
   XF86AudioMute exec $HOME/.config/scripts/changevolume mute
@@ -156,3 +154,7 @@ mode "resize" {
   }
 }
 bindsym $mod+r mode "resize"
+
+bar swaybar_command waybar
+
+include /etc/sway/config.d/*
