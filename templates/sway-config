@@ -1,5 +1,6 @@
 ### Exec stuff
 exec {
+  dbus-update-activation-environment --all 
   pipewire &
   firefox &
   foot --server &
