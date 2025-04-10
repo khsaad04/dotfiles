@@ -23,8 +23,8 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv")
 map("v", "<A-k>", ":m '<-2<cr>gv=gv")
 
 -- greatest remaps ever
-map("x", "p", [["_dp]])
-map("x", "P", [["_dP]])
+map("x", "<leader>p", '"_dp')
+map("x", "<leader>P", '"_dP')
 
 map("n", "yo", function()
     local pos = vim.api.nvim_win_get_cursor(0)
