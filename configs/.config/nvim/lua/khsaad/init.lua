@@ -1,3 +1,8 @@
+require("khsaad.options")
+require("khsaad.keymaps")
+require("khsaad.autocmds")
+require("khsaad.lsp")
+
 -- Clone "mini.nvim" manually in a way that it gets managed by "mini.deps"
 local path_package = vim.fn.stdpath("data") .. "/site/"
 local mini_path = path_package .. "pack/deps/start/mini.nvim"
@@ -21,23 +26,11 @@ require("mini.deps").setup({ path = { package = path_package } })
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 now(function()
-    require("khsaad.options")
-    require("khsaad.keymaps")
-    require("khsaad.lsp")
-
-    vim.api.nvim_create_autocmd("TextYankPost", {
-        callback = function()
-            vim.highlight.on_yank()
-        end,
-    })
-end)
-
-now(function()
     add({ source = "ellisonleao/gruvbox.nvim" })
     require("khsaad.colorscheme")
 end)
 
-now(function()
+later(function()
     add({
         source = "nvim-treesitter/nvim-treesitter",
         hooks = {
