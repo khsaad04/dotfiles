@@ -7,12 +7,12 @@ case "$selected" in
     exit)
         swaymsg exit;;
     shutdown)
-        systemctl poweroff;;
+        loginctl poweroff;;
     suspend)
-        systemctl suspend;;
+        loginctl suspend;;
     hibernate)
-        systemctl hibernate;;
+        loginctl hibernate;;
     reboot)
-        systemctl reboot;;
+        loginctl reboot;;
 esac
 
