@@ -1,28 +1,29 @@
 [global]
-origin="bottom-right"
-offset="10x10"
-frame_width=0
-font="Iosevka 10"
-format="<b>%a</b>\n%s <i>%b</i>"
-icon_theme = "Adwaita"
+follow = "mouse"
+enable_posix_regex = true
+origin = "bottom-right"
+offset = "10x10"
+frame_width = 0
+font = "Iosevka 10"
+format = "<b>%a</b>\n%s <i>%b</i>"
 enable_recursive_icon_lookup = true
-corner_radius=8
-frame_color="#929282"
-markup="full"
+corner_radius = 8
+frame_color = "#929282"
+markup = "full"
 
 [urgency_low]
-background="#35352d"
-foreground="#e5e3d6"
-highlight="#e5e3d6"
-timeout=10
+background = "#35352d"
+foreground = "#e5e3d6"
+highlight = "#e5e3d6"
+timeout = 10
 
 [urgency_normal]
-background="#35352d"
-foreground="#e5e3d6"
-highlight="#e5e3d6"
-timeout=10
+background = "#35352d"
+foreground = "#e5e3d6"
+highlight = "#e5e3d6"
+timeout = 10
 
 [urgency_critical]
-background="#ffb4ab"
-foreground="#690005"
-timeout=0
+background = "#ffb4ab"
+foreground = "#690005"
+timeout = 0
