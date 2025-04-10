@@ -68,15 +68,6 @@ later(function()
 end)
 
 later(function()
-    add({
-        source = "saghen/blink.cmp",
-        depends = { "rafamadriz/friendly-snippets" },
-        checkout = "v1.1.1",
-    })
-    require("blink.cmp").setup()
-end)
-
-later(function()
     add({ source = "tpope/vim-fugitive" })
 end)
 
