@@ -45,6 +45,10 @@ input "type:pointer" {
   pointer_accel 0
 }
 
+input "type:keyboard" {
+    xkb_options compose:ralt
+}
+
 seat * xcursor_theme Adwaita 16
 
 ### Key bindings
