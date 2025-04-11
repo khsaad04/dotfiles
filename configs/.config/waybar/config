@@ -25,7 +25,7 @@
       "custom/power",
     ],
     "custom/launcher": {
-        "format": "󱄅",
+        "format": "",
         "justify": "center",
         "on-click": "tofi-drun --terminal=footclient | xargs -r swaymsg exec --",
         "tooltip": false
