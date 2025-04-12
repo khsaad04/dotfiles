@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 set $term footclient
-set $menu tofi-drun --terminal=footclient | xargs -r swaymsg exec -- 
+set $menu ~/.config/scripts/wmenu-custom desktop
 
 ### Appearance
 # class                   border      background  text        indicator   child_border

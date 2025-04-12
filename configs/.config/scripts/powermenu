@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 entries="󰗼 Exit\n Shutdown\n⏾ Suspend\n󰒲 Hibernate\n Reboot"
 
-selected=$(echo -e "$entries"|tofi| awk '{print tolower($2)}')
+selected=$(echo -e "$entries"|~/.config/scripts/wmenu-custom menu| awk '{print tolower($2)}')
 
 case "$selected" in
     exit)

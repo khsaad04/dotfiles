@@ -27,7 +27,7 @@
     "custom/launcher": {
         "format": "",
         "justify": "center",
-        "on-click": "tofi-drun --terminal=footclient | xargs -r swaymsg exec --",
+        "on-click": "~/.config/scripts/wmenu-custom desktop",
         "tooltip": false
     },
     "sway/window": {
