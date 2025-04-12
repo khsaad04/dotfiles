@@ -11,6 +11,7 @@ alias vimdiff "nvim -d"
 
 # Path
 fish_add_path -aP ~/.cargo/bin
+fish_add_path -aP ~/bin
 
 if status is-interactive
     # Prompt

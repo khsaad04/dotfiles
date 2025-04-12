@@ -27,7 +27,7 @@
     "custom/launcher": {
         "format": "",
         "justify": "center",
-        "on-click": "~/.config/scripts/wmenu-custom desktop",
+        "on-click": "~/bin/wmenu-custom desktop",
         "tooltip": false
     },
     "sway/window": {
@@ -95,9 +95,9 @@
       },
       "format-muted": "󰝟 muted",
       "justify": "center",
-      "on-click": "$HOME/.config/scripts/changevolume mute",
-      "on-scroll-down": "$HOME/.config/scripts/changevolume down 5",
-      "on-scroll-up": "$HOME/.config/scripts/changevolume up 5",
+      "on-click": "~/bin/changevolume mute",
+      "on-scroll-down": "~/bin/changevolume down 5",
+      "on-scroll-up": "~/bin/changevolume up 5",
       "tooltip": false
     },
     "cpu": {
@@ -120,7 +120,7 @@
     "custom/power": {
         "format": "⏻",
         "justify": "center",
-        "on-click": "$HOME/.config/scripts/powermenu",
+        "on-click": "~/bin/powermenu",
         "tooltip": false
     }
   }
