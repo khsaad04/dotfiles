@@ -27,7 +27,7 @@
     "custom/launcher": {
         "format": "",
         "justify": "center",
-        "on-click": "~/bin/wmenu-custom desktop",
+        "on-click": "~/bin/wmenu-custom drun",
         "tooltip": false
     },
     "sway/window": {

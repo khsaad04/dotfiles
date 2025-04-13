@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 case $1 in
-desktop)
+drun)
     j4-dmenu-desktop --no-generic --term "footclient" --dmenu='wmenu -bi -f "Iosevka 10" -N 13140c -n e5e3d6 -M 13140c -m e5e3d6 -S c5cd7a -s 2f3300'
     ;;
 run)
     wmenu-run -bi -f "Iosevka 10" -N 13140c -n e5e3d6 -M 13140c -m e5e3d6 -S c5cd7a -s 2f3300
     ;;
-menu)
+*)
     wmenu -bi -f "Iosevka 10" -N 13140c -n e5e3d6 -M 13140c -m e5e3d6 -S c5cd7a -s 2f3300
     ;;
 esac

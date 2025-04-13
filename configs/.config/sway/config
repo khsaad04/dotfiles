@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 set $term footclient
-set $menu ~/bin/wmenu-custom desktop
+set $menu ~/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
@@ -66,7 +66,8 @@ seat * xcursor_theme Adwaita 16
 # Basics:
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $menu drun
+bindsym $mod+Shift+d exec $menu run
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec ~/bin/powermenu
