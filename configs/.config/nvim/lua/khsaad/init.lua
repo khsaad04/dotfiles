@@ -65,6 +65,15 @@ later(function()
 end)
 
 later(function()
+    add({
+        source = "saghen/blink.cmp",
+        depends = { "rafamadriz/friendly-snippets" },
+        checkout = "v1.1.1",
+    })
+    require("blink.cmp").setup()
+end)
+
+later(function()
     require("mini.files").setup({
         mappings = {
             go_in_plus = "<CR>",
