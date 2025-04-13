@@ -33,6 +33,16 @@ default_border none
 default_floating_border none
 smart_gaps on
 
+# gtk theme
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-size 16
+    gsettings set $gnome-schema font-name 'Iosevka 10'
+    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
+}
+
 ### Window Rules
 assign [app_id="Firefox"] 2
 
