@@ -1,6 +1,6 @@
 ### Exec
 exec dbus-update-activation-environment --all &
-exec pipewire &
+exec pgreg pipewire || pipewire &
 exec foot --server &
 exec dunst &
 exec nm-applet --indicator &
