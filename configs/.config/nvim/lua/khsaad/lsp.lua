@@ -11,6 +11,7 @@ vim.lsp.enable({
     "pylsp",
     "ruff",
     "rust-analyzer",
+    "zls",
 })
 
 -- Diagnostics
