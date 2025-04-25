@@ -2,12 +2,6 @@ local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
--- Better window navigation
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
-
 -- Clear highlights on search
 map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear highlights on search" })
 
@@ -22,10 +16,7 @@ map("n", "<A-k>", "<cmd>m .-2<cr>==")
 map("v", "<A-j>", ":m '>+1<cr>gv=gv")
 map("v", "<A-k>", ":m '<-2<cr>gv=gv")
 
--- greatest remaps ever
-map("x", "<leader>p", '"_dp')
-map("x", "<leader>P", '"_dP')
-
+-- Duplicate line while saving cursor column position
 map("n", "yo", function()
     local pos = vim.api.nvim_win_get_cursor(0)
     local text = vim.api.nvim_get_current_line()

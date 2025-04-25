@@ -26,4 +26,4 @@ vim.diagnostic.config({
         },
     },
 })
-vim.diagnostic.enable(false)
+vim.diagnostic.enable(false) -- disable diagnostic by default
