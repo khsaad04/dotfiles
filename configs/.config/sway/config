@@ -1,5 +1,5 @@
 ### Exec
-exec dbus-update-activation-environment --all &
+exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 exec pgreg pipewire || pipewire &
 exec foot --server &
 exec dunst &
