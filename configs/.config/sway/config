@@ -1,5 +1,5 @@
-### Exec
-exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+### Execute at startup
+exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME &
 exec pipewire &
 exec foot --server &
 exec dunst &
@@ -7,9 +7,9 @@ exec nm-applet --indicator &
 exec wl-clip-persist -c regular &
 exec udiskie -s &
 exec fcitx5 &
-exec firefox
+exec firefox &
 
-### Variables
+### Set variables
 set $mod Super
 set $left h
 set $down j
@@ -25,10 +25,12 @@ client.focused_inactive   #46492e     #46492e     #e4e5c1     #c7c9a6     #46492
 client.unfocused          #202018     #202018     #e5e3d6     #202018     #202018
 
 font pango:Iosevka 10 
+
 gaps {
   inner 2
   outer 2
 }
+
 default_border none
 default_floating_border none
 smart_gaps on

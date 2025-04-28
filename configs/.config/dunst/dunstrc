@@ -1,6 +1,4 @@
 [global]
-follow = "mouse"
-enable_posix_regex = true
 origin = "bottom-right"
 offset = "10x10"
 frame_width = 0
@@ -8,7 +6,6 @@ font = "Iosevka 10"
 format = "<b>%a</b>\n%s <i>%b</i>"
 enable_recursive_icon_lookup = true
 corner_radius = 8
-frame_color = "#929282"
 markup = "full"
 
 [urgency_low]
