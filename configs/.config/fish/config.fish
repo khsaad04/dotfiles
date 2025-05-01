@@ -1,5 +1,7 @@
 set fish_greeting
 set -gx RIPGREP_CONFIG_PATH ~/.config/ripgreprc
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 
 # Aliases
 alias l 'ls -lah'
