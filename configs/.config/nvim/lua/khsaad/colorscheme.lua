@@ -1,7 +1,7 @@
 local palette = {
-    dark0 = "#13140c",
+    dark0 = "#14140c",
     dark1 = "#202018",
-    dark2 = "#35352d",
+    dark2 = "#36352c",
 }
 
 require("gruvbox").setup({

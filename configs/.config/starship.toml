@@ -1,19 +1,19 @@
-format = "[](fg:#c5cd7a)$username[](fg:#c5cd7a bg:#444b04)$directory[](fg:#444b04)$all $cmd_duration\n$character"
+format = "[](fg:#c9cb78)$username[](fg:#c9cb78 bg:#484a01)$directory[](fg:#484a01)$all $cmd_duration\n$character"
 
 [username]
 format = "[$user]($style)"
-style_root = "bold fg:#2f3300 bg:#c5cd7a"
-style_user = "bold fg:#2f3300 bg:#c5cd7a"
+style_root = "bold fg:#313300 bg:#c9cb78"
+style_user = "bold fg:#313300 bg:#c9cb78"
 show_always = true
 
 [directory]
 format = "[[ $path]($style)[$read_only]($read_only_style)](bg:surface1)"
-style = "bold fg:#e1e994 bg:#444b04"
-read_only_style = "bold fg:#e1e994 bg:#444b04"
+style = "bold fg:#e5e891 bg:#484a01"
+read_only_style = "bold fg:#e5e891 bg:#484a01"
 
 [line_break]
 disabled = true
 
 [git_branch]
 format = " [$symbol$branch(:$remote_branch)]($style) "
-style = "bold #e1e994"
+style = "bold #e5e891"
