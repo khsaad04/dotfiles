@@ -217,6 +217,9 @@ user_pref("ui.key.menuAccessKeyFocuses", false);
 user_pref("signon.formlessCapture.enabled", true);
 user_pref("permissions.default.desktop-notification", 0);
 user_pref("privacy.userContext.enabled", true);
+user_pref("browser.toolbars.bookmarks.visibility", "never");
+user_pref("browser.uidensity", 1);
+user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"vertical-spacer\",\"urlbar-container\",\"save-to-pocket-button\",\"downloads-button\",\"reset-pbm-toolbar-button\",\"unified-extensions-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\"],\"vertical-tabs\":[],\"PersonalToolbar\":[\"personal-bookmarks\"],\"unified-extensions-area\":[\"atbc_easonwong-browser-action\",\"addon_darkreader_org-browser-action\",\"ublock0_raymondhill_net-browser-action\"]},\"seen\":[\"reset-pbm-toolbar-button\",\"atbc_easonwong-browser-action\",\"addon_darkreader_org-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"developer-button\"],\"dirtyAreaCache\":[\"unified-extensions-area\",\"TabsToolbar\",\"nav-bar\"],\"currentVersion\":22,\"newElementCount\":3}");
 
 
 
