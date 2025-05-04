@@ -68,7 +68,7 @@ later(function()
     add({
         source = "saghen/blink.cmp",
         depends = { "rafamadriz/friendly-snippets" },
-        version = "v1.1.1"
+        version = "v1.1.1",
     })
     require("blink.cmp").setup()
 end)
