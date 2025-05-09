@@ -22,8 +22,6 @@ window#waybar {
 }
 
 tooltip {
-  font-size: 12;
-  font-weight: bold;
   background-color: #14140c;
   color: #e5e3d6;
   border: 1px solid #939182;
@@ -42,7 +40,7 @@ tooltip {
   padding: 0px 3px;
   margin: 2px 2px;
   transition: all 0.3s ease;
-  border: 0;
+  border: 0px;
 }
 
 #workspaces button.active,
@@ -67,26 +65,22 @@ tooltip {
 }
 
 #mpris.player {
-  font-size: 12px;
   margin-right: 0px;
   margin-left: 2px;
   border-radius: 2px 0 0 2px;
 }
 
 #mpris.prev {
-  font-size: 12px;
   margin-right: 0px;
   border-radius: 0;
 }
 
 #mpris.status {
-  font-size: 9px;
   margin-right: 0px;
   border-radius: 0;
 }
 
 #mpris.next {
-  font-size: 12px;
   border-radius: 0 2px 2px 0;
   margin-right: 2px;
 }
@@ -100,8 +94,6 @@ tooltip {
 }
 
 #window {
-  font-size: 12;
-  font-weight: bold;
   margin: 2px 2px;
 }
 
@@ -119,8 +111,6 @@ tooltip {
 }
 
 #custom-power {
-  font-size: 12px;
-  font-weight: 400;
   color: #ffb4ab;
   background-color: #36352c;
   border-radius: 2px;
@@ -129,8 +119,6 @@ tooltip {
 }
 
 #custom-launcher {
-  font-size: 12px;
-  font-weight: 400;
   color: #bfecda;
   background-color: #244e41;
   border-radius: 2px;

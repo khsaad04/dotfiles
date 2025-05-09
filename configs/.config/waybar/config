@@ -1,44 +1,36 @@
-[
-  {
+{
     "layer": "top",
     "position": "bottom",
     "spacing": 0,
     "margin": 0,
     "modules-left": [
-      "custom/launcher",
-      "sway/workspaces",
-      "mpris#player",
-      "mpris#prev",
-      "mpris#status",
-      "mpris#next",
+        "custom/launcher",
+        "sway/workspaces",
+        "mpris#player",
+        "mpris#prev",
+        "mpris#status",
+        "mpris#next",
     ],
     "modules-center": [
-      "sway/window"
+        "sway/window"
     ],
     "modules-right": [
-      "tray",
-      "network",
-      "pulseaudio",
-      "cpu",
-      "memory",
-      "clock",
-      "custom/power",
+        "tray",
+        "network",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "clock",
+        "custom/power",
     ],
     "custom/launcher": {
         "format": "",
-        "justify": "center",
         "on-click": "~/bin/wmenu-custom drun",
         "tooltip": false
-    },
-    "sway/window": {
-        "tooltip": false,
-        "icon": true,
-        "icon-size": 12,
     },
     "mpris#player": {
         "format": "{player_icon}",
         "interval": 1,
-        "justify": "center",
         "player-icons": {
             "firefox": "󰈹",
             "spotify": ""
@@ -46,82 +38,74 @@
         "tooltip-format": "{dynamic}"
     },
     "mpris#prev": {
-      "format": "󰒮",
-      "interval": 1,
-      "justify": "center",
-      "on-click": "playerctl previous",
-      "tooltip": false
+        "format": "󰒮",
+        "on-click": "playerctl previous",
+        "tooltip": false
     },
     "mpris#status": {
-      "format": "{status_icon}",
-      "interval": 1,
-      "justify": "center",
-      "on-click": "playerctl play-pause",
-      "status-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip": false
+        "format": "{status_icon}",
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+        "status-icons": {
+            "paused": "󰐊",
+            "playing": ""
+        },
+        "tooltip": false
     },
     "mpris#next": {
-      "format": "󰒭",
-      "interval": 1,
-      "justify": "center",
-      "on-click": "playerctl next",
-      "tooltip": false
+        "format": "󰒭",
+        "on-click": "playerctl next",
+        "tooltip": false
+    },
+    "sway/window": {
+        "icon": true,
+        "icon-size": 10,
+        "tooltip": false,
     },
     "tray": {
-      "icon-size": 12,
-      "justify": "center",
-      "spacing": 5
+        "icon-size": 10,
+        "spacing": 5
     },
     "network": {
-      "format-ethernet": "󰈀 {bandwidthTotalBytes}",
-      "format-wifi": "󰖩 {signalStrength}%",
-      "interval": 1,
-      "justify": "center",
-      "tooltip-format": "{essid}",
-      "tooltip-format-disconnected": ""
+        "format-wifi": "󰖩 ({signalStrength}%)",
+        "format-ethernet": "󰈀 ({bandwidthTotalBytes})",
+        "interval": 1,
+        "tooltip-format": "{essid} ({signalStrength}%) IP: {ipaddr}",
+        "tooltip-format-disconnected": ""
     },
     "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-icons": {
-        "default": [
-          "",
-          "",
-          ""
-        ],
-        "headphone": "󰋋"
-      },
-      "format-muted": "󰝟 muted",
-      "justify": "center",
-      "on-click": "~/bin/changevolume mute",
-      "on-scroll-down": "~/bin/changevolume down 5",
-      "on-scroll-up": "~/bin/changevolume up 5",
-      "tooltip": false
+        "format": "{icon} {volume}%",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ],
+            "headphone": "󰋋"
+        },
+        "format-muted": "󰝟 muted",
+        "on-click": "~/bin/changevolume mute",
+        "on-scroll-down": "~/bin/changevolume down 5",
+        "on-scroll-up": "~/bin/changevolume up 5",
+        "tooltip": false
     },
     "cpu": {
         "format": " {usage}%",
         "interval": 1,
-        "justify": "center",
         "tooltip": false
     },
     "memory": {
-      "format": " {}%",
-      "interval": 1,
-      "justify": "center"
+        "format": " {}%",
+        "interval": 1,
     },
     "clock": {
-      "format": " {:%a, %b %d 󰥔 %I:%M %p}",
-      "interval": 1,
-      "justify": "center",
-      "tooltip": false,
+        "format": " {:%a, %b %d 󰥔 %I:%M %p}",
+        "interval": 1,
+        "tooltip": false,
     },
     "custom/power": {
         "format": "⏻",
-        "justify": "center",
         "on-click": "~/bin/powermenu",
         "tooltip": false
     }
-  }
-]
+}
