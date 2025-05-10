@@ -2,10 +2,10 @@ local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
--- Clear highlights on search
+-- Clear highlights of search
 map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear highlights on search" })
 
--- Stay in indent mode while indenting
+-- Stay in visual mode while indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
@@ -26,7 +26,7 @@ map("n", "yo", function()
 end, { desc = "Copy line below and save cursor position" })
 
 -- Lsp & Diagnostics keymaps
-map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Lsp Format" })
+map("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]sp [F]ormat" })
 map("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 map(
