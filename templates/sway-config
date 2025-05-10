@@ -1,15 +1,4 @@
-### Execute at startup
-exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
-exec pipewire
-exec foot --server
-exec dunst
-exec nm-applet --indicator
-exec wl-clip-persist -c regular
-exec udiskie -s
-exec fcitx5
-exec firefox
-
-### Set variables
+### Variables
 set $mod Super
 set $left h
 set $down j
@@ -21,8 +10,8 @@ set $menu ~/bin/wmenu-custom
 ### Appearance
 # class                   border      background  text        indicator   child_border
 client.focused            #{{surface_container_highest}}     #{{surface_container_highest}}     #{{on_surface}}     #{{primary_fixed_dim}}     #{{surface_container_highest}}
-client.focused_inactive   #{{secondary_container}}     #{{secondary_container}}     #{{on_secondary_container}}     #{{secondary_fixed_dim}}     #{{secondary_container}}
-client.unfocused          #{{surface_container}}     #{{surface_container}}     #{{on_surface}}     #{{surface_container}}     #{{surface_container}}
+client.focused_inactive   #{{secondary_container}}     #{{secondary_container}}     #{{on_secondary_container}}     #{{tertiary_fixed_dim}}     #{{secondary_container}}
+client.unfocused          #{{surface_container}}     #{{surface_container}}     #{{outline_variant}}     #{{surface_container}}     #{{surface_container}}
 
 font pango:Iosevka 10 
 
@@ -44,9 +33,6 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
 }
-
-### Window Rules
-assign [app_id="Firefox"] 2
 
 ### Output configuration
 output * bg {{wallpaper}} fill
@@ -162,6 +148,19 @@ bindsym --no-repeat Print exec grimshot --notify savecopy
 bindsym --no-repeat Shift+Print exec grimshot --notify savecopy area
 bindsym --no-repeat Ctrl+Print exec grimshot --notify savecopy window
 
+### Assign
+assign [app_id="Firefox"] 2
+
+### Execute at startup
+exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+exec pipewire
+exec foot --server
+exec dunst
+exec nm-applet --indicator
+exec wl-clip-persist -c regular
+exec udiskie -s
+exec fcitx5
+exec firefox
 
 bar swaybar_command waybar
 

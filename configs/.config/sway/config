@@ -1,15 +1,4 @@
-### Execute at startup
-exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
-exec pipewire
-exec foot --server
-exec dunst
-exec nm-applet --indicator
-exec wl-clip-persist -c regular
-exec udiskie -s
-exec fcitx5
-exec firefox
-
-### Set variables
+### Variables
 set $mod Super
 set $left h
 set $down j
@@ -21,8 +10,8 @@ set $menu ~/bin/wmenu-custom
 ### Appearance
 # class                   border      background  text        indicator   child_border
 client.focused            #36352c     #36352c     #e5e3d6     #c9cb78     #36352c
-client.focused_inactive   #48482d     #48482d     #e5e5c0     #c9c8a5     #48482d
-client.unfocused          #202018     #202018     #e5e3d6     #202018     #202018
+client.focused_inactive   #48482d     #48482d     #e5e5c0     #a3d0be     #48482d
+client.unfocused          #202018     #202018     #48473a     #202018     #202018
 
 font pango:Iosevka 10 
 
@@ -44,9 +33,6 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
 }
-
-### Window Rules
-assign [app_id="Firefox"] 2
 
 ### Output configuration
 output * bg /home/khsaad/dotfiles/configs/Pictures/wallpapers/wp.jpg fill
@@ -162,6 +148,19 @@ bindsym --no-repeat Print exec grimshot --notify savecopy
 bindsym --no-repeat Shift+Print exec grimshot --notify savecopy area
 bindsym --no-repeat Ctrl+Print exec grimshot --notify savecopy window
 
+### Assign
+assign [app_id="Firefox"] 2
+
+### Execute at startup
+exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+exec pipewire
+exec foot --server
+exec dunst
+exec nm-applet --indicator
+exec wl-clip-persist -c regular
+exec udiskie -s
+exec fcitx5
+exec firefox
 
 bar swaybar_command waybar
 

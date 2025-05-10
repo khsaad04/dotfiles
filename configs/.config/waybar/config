@@ -87,12 +87,10 @@
         "on-click": "~/bin/changevolume mute",
         "on-scroll-down": "~/bin/changevolume down 5",
         "on-scroll-up": "~/bin/changevolume up 5",
-        "tooltip": false
     },
     "cpu": {
         "format": " {usage}%",
         "interval": 1,
-        "tooltip": false
     },
     "memory": {
         "format": " {}%",
@@ -100,7 +98,7 @@
     },
     "clock": {
         "format": " {:%a, %b %d 󰥔 %I:%M %p}",
-        "interval": 1,
+        "interval": 60,
         "tooltip": false,
     },
     "custom/power": {
