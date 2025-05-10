@@ -9,9 +9,9 @@ set $menu ~/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
-client.focused            #36352c     #36352c     #e5e3d6     #c9cb78     #36352c
-client.focused_inactive   #48482d     #48482d     #e5e5c0     #a3d0be     #48482d
-client.unfocused          #202018     #202018     #48473a     #202018     #202018
+client.focused            #484a01     #484a01     #e5e891     #c9cb78     #484a01
+client.focused_inactive   #48482d     #48482d     #e5e5c0     #c9c8a5     #48482d
+client.unfocused          #202018     #202018     #48473a     #14140c     #202018
 
 font pango:Iosevka 10 
 
@@ -20,8 +20,11 @@ gaps {
   outer 2
 }
 
-default_border none
+titlebar_padding 5 1
+workspace_layout tabbed
+default_border normal 1
 default_floating_border none
+hide_edge_borders smart_no_gaps
 smart_gaps on
 
 # gtk theme

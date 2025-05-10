@@ -9,9 +9,9 @@ set $menu ~/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
-client.focused            #{{surface_container_highest}}     #{{surface_container_highest}}     #{{on_surface}}     #{{primary_fixed_dim}}     #{{surface_container_highest}}
-client.focused_inactive   #{{secondary_container}}     #{{secondary_container}}     #{{on_secondary_container}}     #{{tertiary_fixed_dim}}     #{{secondary_container}}
-client.unfocused          #{{surface_container}}     #{{surface_container}}     #{{outline_variant}}     #{{surface_container}}     #{{surface_container}}
+client.focused            #{{primary_container}}     #{{primary_container}}     #{{on_primary_container}}     #{{primary}}     #{{primary_container}}
+client.focused_inactive   #{{secondary_container}}     #{{secondary_container}}     #{{on_secondary_container}}     #{{secondary}}     #{{secondary_container}}
+client.unfocused          #{{surface_container}}     #{{surface_container}}     #{{outline_variant}}     #{{surface}}     #{{surface_container}}
 
 font pango:Iosevka 10 
 
@@ -20,8 +20,11 @@ gaps {
   outer 2
 }
 
-default_border none
+titlebar_padding 5 1
+workspace_layout tabbed
+default_border normal 1
 default_floating_border none
+hide_edge_borders smart_no_gaps
 smart_gaps on
 
 # gtk theme
