@@ -9,9 +9,9 @@ set $menu ~/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
-client.focused            #{{primary_container}}     #{{primary_container}}     #{{on_primary_container}}     #{{primary}}     #{{primary_container}}
-client.focused_inactive   #{{secondary_container}}     #{{secondary_container}}     #{{on_secondary_container}}     #{{secondary}}     #{{secondary_container}}
-client.unfocused          #{{surface_container}}     #{{surface_container}}     #{{outline_variant}}     #{{surface}}     #{{surface_container}}
+client.focused            #{{primary_container}}     #{{primary}}     #{{on_primary}}     #{{primary}}     #{{primary_container}}
+client.focused_inactive   #{{secondary_container}}     #{{secondary}}     #{{on_secondary}}     #{{secondary}}     #{{secondary_container}}
+client.unfocused          #{{surface_container}}     #{{surface}}     #{{outline_variant}}     #{{surface}}     #{{surface_container}}
 
 font pango:Iosevka 10 
 
@@ -21,7 +21,6 @@ gaps {
 }
 
 titlebar_padding 5 1
-workspace_layout tabbed
 default_border normal 1
 default_floating_border none
 hide_edge_borders smart_no_gaps
@@ -108,6 +107,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Layout stuff:
+workspace_layout tabbed
+
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
