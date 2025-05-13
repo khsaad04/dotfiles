@@ -10,8 +10,6 @@
         "mpris#prev",
         "mpris#status",
         "mpris#next",
-    ],
-    "modules-center": [
         "sway/window"
     ],
     "modules-right": [
@@ -58,12 +56,13 @@
         "tooltip": false
     },
     "sway/window": {
+        "format": "",
         "icon": true,
-        "icon-size": 10,
+        "icon-size": 14,
         "tooltip": false,
     },
     "tray": {
-        "icon-size": 10,
+        "icon-size": 14,
         "spacing": 5
     },
     "network": {
