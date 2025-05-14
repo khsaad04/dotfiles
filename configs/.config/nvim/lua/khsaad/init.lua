@@ -1,6 +1,5 @@
 require("khsaad.options")
 require("khsaad.keymaps")
-require("khsaad.autocmds")
 require("khsaad.lsp")
 
 -- Clone "mini.nvim" manually in a way that it gets managed by "mini.deps"
