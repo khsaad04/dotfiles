@@ -86,6 +86,7 @@
         "on-click": "~/bin/changevolume mute",
         "on-scroll-down": "~/bin/changevolume down 5",
         "on-scroll-up": "~/bin/changevolume up 5",
+        "tooltip": false,
     },
     "cpu": {
         "format": " {usage}%",
