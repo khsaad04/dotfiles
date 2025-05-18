@@ -4,28 +4,20 @@
     "spacing": 0,
     "margin": 0,
     "modules-left": [
-        "custom/launcher",
         "sway/workspaces",
         "mpris#player",
         "mpris#prev",
         "mpris#status",
         "mpris#next",
-        "sway/window"
     ],
     "modules-right": [
-        "tray",
         "network",
         "pulseaudio",
         "cpu",
         "memory",
         "clock",
-        "custom/power",
+        "tray",
     ],
-    "custom/launcher": {
-        "format": "",
-        "on-click": "~/bin/wmenu-custom drun",
-        "tooltip": false
-    },
     "mpris#player": {
         "format": "{player_icon}",
         "interval": 1,
@@ -101,9 +93,4 @@
         "interval": 60,
         "tooltip": false,
     },
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "~/bin/powermenu",
-        "tooltip": false
-    }
 }
