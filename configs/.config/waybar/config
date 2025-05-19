@@ -47,16 +47,6 @@
         "on-click": "playerctl next",
         "tooltip": false
     },
-    "sway/window": {
-        "format": "",
-        "icon": true,
-        "icon-size": 14,
-        "tooltip": false,
-    },
-    "tray": {
-        "icon-size": 14,
-        "spacing": 5
-    },
     "network": {
         "format-wifi": "󰖩 ({signalStrength}%)",
         "format-ethernet": "󰈀 ({bandwidthTotalBytes})",
@@ -92,5 +82,9 @@
         "format": " {:%a, %b %d 󰥔 %I:%M %p}",
         "interval": 60,
         "tooltip": false,
+    },
+    "tray": {
+        "icon-size": 10,
+        "spacing": 5
     },
 }

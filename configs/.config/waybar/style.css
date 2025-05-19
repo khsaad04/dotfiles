@@ -4,13 +4,11 @@ tooltip,
 #workspaces button,
 #workspaces button label,
 #mpris,
-#window #network,
+#network,
 #pulseaudio,
 #cpu,
 #memory,
-#clock,
-#custom-power,
-#custom-launcher {
+#clock {
   all: initial;
   font-family: Iosevka;
   font-size: 10px;
@@ -93,10 +91,6 @@ tooltip {
   background-color: #ee8424;
 }
 
-#window {
-  margin: 2px 2px;
-}
-
 #network,
 #pulseaudio,
 #cpu,
@@ -105,22 +99,6 @@ tooltip {
 #tray {
   color: #e5e3d6;
   background-color: #36352c;
-  border-radius: 2px;
-  margin: 2px 2px;
-  padding: 0px 3px;
-}
-
-#custom-power {
-  color: #ffb4ab;
-  background-color: #36352c;
-  border-radius: 2px;
-  margin: 2px 2px;
-  padding: 0px 3px;
-}
-
-#custom-launcher {
-  color: #bfecda;
-  background-color: #244e41;
   border-radius: 2px;
   margin: 2px 2px;
   padding: 0px 3px;
