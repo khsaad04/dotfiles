@@ -84,7 +84,7 @@
         "tooltip": false,
     },
     "tray": {
-        "icon-size": 10,
+        "icon-size": 16,
         "spacing": 5
     },
 }
