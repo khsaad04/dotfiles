@@ -1,23 +1,14 @@
-local map = vim.keymap.set
-
 vim.g.mapleader = " "
 
 -- Clear highlights of search
-map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear highlights on search" })
+vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear highlights on search" })
 
 -- Stay in visual mode while indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
-
--- Move Lines
-map("n", "<A-j>", "<cmd>m .+1<cr>==")
-map("n", "<A-k>", "<cmd>m .-2<cr>==")
-
-map("v", "<A-j>", ":m '>+1<cr>gv=gv")
-map("v", "<A-k>", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Duplicate line while saving cursor column position
-map("n", "yo", function()
+vim.keymap.set("n", "yo", function()
     local pos = vim.api.nvim_win_get_cursor(0)
     local text = vim.api.nvim_get_current_line()
     vim.cmd.normal("o")
@@ -26,10 +17,10 @@ map("n", "yo", function()
 end, { desc = "Copy line below and save cursor position" })
 
 -- Lsp & Diagnostics keymaps
-map("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]sp [F]ormat" })
-map("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-map(
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]sp [F]ormat" })
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set(
     "n",
     "<leader>td",
     "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>",
