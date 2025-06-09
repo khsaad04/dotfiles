@@ -1,8 +1,6 @@
-# vim:fileencoding=utf-8:foldmethod=marker
-
 # : Manager {{{
 
-[manager]
+[mgr]
 cwd = { fg = "#83a598" }
 
 # Hovered
