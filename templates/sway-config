@@ -15,11 +15,6 @@ client.unfocused          #{{surface_container}}     #{{surface}}     #{{outline
 
 font pango:Iosevka 10 
 
-gaps {
-  inner 2
-  outer 2
-}
-
 titlebar_padding 5 1
 default_border normal 1
 default_floating_border none

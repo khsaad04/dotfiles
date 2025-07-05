@@ -15,11 +15,6 @@ client.unfocused          #202018     #14140c     #48473a     #14140c     #20201
 
 font pango:Iosevka 10 
 
-gaps {
-  inner 2
-  outer 2
-}
-
 titlebar_padding 5 1
 default_border normal 1
 default_floating_border none
