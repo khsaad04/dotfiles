@@ -50,7 +50,6 @@
     "network": {
         "format-wifi": "󰖩 ({signalStrength}%)",
         "format-ethernet": "󰈀 ({bandwidthTotalBytes})",
-        "interval": 1,
         "tooltip-format": "{essid} ({signalStrength}%) IP: {ipaddr}",
         "tooltip-format-disconnected": ""
     },
@@ -80,7 +79,6 @@
     },
     "clock": {
         "format": " {:%a, %b %d 󰥔 %I:%M %p}",
-        "interval": 60,
         "tooltip": false,
     },
     "tray": {
