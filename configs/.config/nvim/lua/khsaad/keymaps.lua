@@ -17,7 +17,6 @@ vim.keymap.set("n", "yo", function()
 end, { desc = "Copy line below and save cursor position" })
 
 -- Lsp & Diagnostics keymaps
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]sp [F]ormat" })
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set(
