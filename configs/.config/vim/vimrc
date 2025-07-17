@@ -1,0 +1,25 @@
+set number
+set relativenumber
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set splitbelow
+set splitright
+set nowrap
+set scrolloff=999
+set virtualedit=block
+set clipboard=unnamedplus
+set undofile
+set undodir=$HOME/.local/state/vim/undo
+set noswapfile
+set ignorecase
+set smartcase
+set incsearch
+set signcolumn=yes
+set laststatus=2
+
+colorscheme habamax
+
+syntax on
+filetype plugin indent on
