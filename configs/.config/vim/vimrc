@@ -12,6 +12,7 @@ set virtualedit=block
 set clipboard=unnamedplus
 set undofile
 set undodir=$HOME/.local/state/vim/undo
+set viminfofile=$HOME/.local/state/vim/info
 set noswapfile
 set ignorecase
 set smartcase
