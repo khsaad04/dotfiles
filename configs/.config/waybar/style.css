@@ -16,13 +16,13 @@ tooltip,
 
 window#waybar {
   background-color: #14140c;
-  color: #e5e3d6;
+  color: #e6e2d5;
 }
 
 tooltip {
   background-color: #14140c;
-  color: #e5e3d6;
-  border: 1px solid #939182;
+  color: #e6e2d5;
+  border: 1px solid #939181;
   border-radius: 2px;
 }
 
@@ -43,11 +43,11 @@ tooltip {
 
 #workspaces button.active,
 #workspaces button.focused {
-  background-color: #e5e3d6;
+  background-color: #e6e2d5;
 }
 
 #workspaces button label {
-  color: #e5e3d6;
+  color: #e6e2d5;
 }
 
 #workspaces button.active label,
@@ -97,7 +97,7 @@ tooltip {
 #memory,
 #clock,
 #tray {
-  color: #e5e3d6;
+  color: #e6e2d5;
   background-color: #36352c;
   border-radius: 2px;
   margin: 2px 2px;
