@@ -1,14 +1,14 @@
 wallpaper = "configs/Pictures/wallpapers/wp.jpg"
 
 [files]
-configs  = { target="configs", dest="~", recursive = true                                                }
-dunst    = { dest="~/.config/dunst/dunstrc",                   template="templates/dunstrc"              }
-foot     = { dest="~/.config/foot/foot.ini",                   template="templates/foot.ini"             }
-gtk3css  = { dest="~/.config/gtk-3.0/gtk.css",                 template="templates/gtk.css"              }
-gtk4css  = { dest="~/.config/gtk-4.0/gtk.css",                 template="templates/gtk.css"              }
-nvim     = { dest="~/.config/nvim/lua/khsaad/colorscheme.lua", template="templates/nvim-colorscheme.lua" }
-sway     = { dest="~/.config/sway/config",                     template="templates/sway-config"          }
-tmux     = { dest="~/.config/tmux/tmux.conf",                  template="templates/tmux.conf"            }
-wmenu    = { dest="~/bin/wmenu-custom",                        template="templates/wmenu-custom"         }
-waybar   = { dest="~/.config/waybar/style.css",                template="templates/waybar-style.css"     }
-starship = { dest="~/.config/starship.toml",                   template="templates/starship.toml"        }
+configs  = { target="configs", dest="~", recursive = true, pre_hooks = [ "mkdir /home/khsaad/.local/state/vim" ] }
+dunst    = { dest="~/.config/dunst/dunstrc",                   template="templates/dunstrc"                      }
+foot     = { dest="~/.config/foot/foot.ini",                   template="templates/foot.ini"                     }
+gtk3css  = { dest="~/.config/gtk-3.0/gtk.css",                 template="templates/gtk.css"                      }
+gtk4css  = { dest="~/.config/gtk-4.0/gtk.css",                 template="templates/gtk.css"                      }
+nvim     = { dest="~/.config/nvim/lua/khsaad/colorscheme.lua", template="templates/nvim-colorscheme.lua"         }
+sway     = { dest="~/.config/sway/config",                     template="templates/sway-config"                  }
+tmux     = { dest="~/.config/tmux/tmux.conf",                  template="templates/tmux.conf"                    }
+wmenu    = { dest="~/bin/wmenu-custom",                        template="templates/wmenu-custom"                 }
+waybar   = { dest="~/.config/waybar/style.css",                template="templates/waybar-style.css"             }
+starship = { dest="~/.config/starship.toml",                   template="templates/starship.toml"                }
