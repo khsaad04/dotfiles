@@ -1,14 +1,14 @@
 local palette = {
-    dark0 = "#14140c",
+    dark0 = "#13140c",
     dark1 = "#202018",
-    dark2 = "#36352c",
+    dark2 = "#35352d",
 }
 
 require("gruvbox").setup({
     palette_overrides = palette,
     overrides = {
-        StatusLine = { bg = "#202018", fg = "#e6e2d5" },
-        StatusLineNC = { bg = "#202018", fg = "#e6e2d5" },
+        StatusLine = { bg = "#202018", fg = "#e5e3d6" },
+        StatusLineNC = { bg = "#202018", fg = "#e5e3d6" },
     },
 })
 vim.cmd.colorscheme("gruvbox")

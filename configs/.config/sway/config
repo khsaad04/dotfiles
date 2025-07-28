@@ -9,9 +9,9 @@ set $menu ~/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
-client.focused            #4a4900     #cccb75     #333200     #cccb75     #4a4900
-client.focused_inactive   #49482d     #cbc8a4     #323218     #cbc8a4     #49482d
-client.unfocused          #202018     #14140c     #48473a     #14140c     #202018
+client.focused            #444b04     #c5cd7a     #2f3300     #c5cd7a     #444b04
+client.focused_inactive   #46492e     #c7c9a6     #30321a     #c7c9a6     #46492e
+client.unfocused          #202018     #13140c     #47483b     #13140c     #202018
 
 font pango:Iosevka 10 
 
