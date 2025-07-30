@@ -1,14 +1,13 @@
-local palette = {
-    dark0 = "#13140c",
-    dark1 = "#202018",
-    dark2 = "#35352d",
-}
+vim.cmd.colorscheme("retrobox")
 
-require("gruvbox").setup({
-    palette_overrides = palette,
-    overrides = {
-        StatusLine = { bg = "#202018", fg = "#e5e3d6" },
-        StatusLineNC = { bg = "#202018", fg = "#e5e3d6" },
-    },
-})
-vim.cmd.colorscheme("gruvbox")
+vim.api.nvim_set_hl(0, "Normal",       { bg = "#13140c",                fg = "#e5e3d6"                })
+vim.api.nvim_set_hl(0, "NormalFloat",  { bg = "#202018",      fg = "#e5e3d6"                })
+vim.api.nvim_set_hl(0, "FloatBorder",  { bg = "#202018",      fg = "#929282"                   })
+vim.api.nvim_set_hl(0, "Pmenu",        { bg = "#202018",      fg = "#e5e3d6"                })
+vim.api.nvim_set_hl(0, "PmenuKind",    { bg = "#202018",      fg = "#c5cd7a"                    })
+vim.api.nvim_set_hl(0, "PmenuExtra",   { bg = "#202018",      fg = "#c8c7b7"        })
+vim.api.nvim_set_hl(0, "PmenuSbar",    { bg = "#1c1c14",                                        })
+vim.api.nvim_set_hl(0, "PmenuThumb",   { bg = "#2a2a22",                                       })
+vim.api.nvim_set_hl(0, "StatusLine",   { bg = "#202018",      fg = "#e5e3d6"                })
+vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#202018",      fg = "#35352d" })
+vim.api.nvim_set_hl(0, "CursorLine",   { bg = "#47483b",        fg = "#e5e3d6"                })

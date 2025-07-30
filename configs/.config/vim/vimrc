@@ -20,7 +20,8 @@ set incsearch
 set signcolumn=yes
 set laststatus=2
 
-colorscheme habamax
+set background=dark
+colorscheme retrobox
 
 syntax on
 filetype plugin indent on
