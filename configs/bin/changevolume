@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 icon_path="$HOME/Pictures/icons"
 amount=${2:-5}
 id_output="8052"

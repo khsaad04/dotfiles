@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 entries="󰗼 Exit\n Shutdown\n⏾ Suspend\n󰒲 Hibernate\n Reboot"
 
 selected=$(echo -e "$entries"|~/bin/wmenu-custom| awk '{print tolower($2)}')
