@@ -20,7 +20,7 @@ vim.opt.ignorecase     = true
 
 -- [[ Colorscheme ]] --
 --
-vim.cmd.colorscheme("retrobox")
+require("colorscheme")
 
 -- [[ Keymaps ]] --
 --
