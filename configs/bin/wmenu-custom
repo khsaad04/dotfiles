@@ -2,12 +2,12 @@
 
 case $1 in
 drun)
-    j4-dmenu-desktop --no-generic --term "footclient" --dmenu='wmenu -bi -f "Iosevka 10" -N 13140c -n e5e3d6 -M 13140c -m e5e3d6 -S c5cd7a -s 2f3300'
+    j4-dmenu-desktop --no-generic --term "footclient" --dmenu='wmenu -bi -f "Iosevka 10" -N 14140c -n e6e3d5 -M 14140c -m e6e3d5 -S cccb76 -s 333200'
     ;;
 run)
-    wmenu-run -bi -f "Iosevka 10" -N 13140c -n e5e3d6 -M 13140c -m e5e3d6 -S c5cd7a -s 2f3300
+    wmenu-run -bi -f "Iosevka 10" -N 14140c -n e6e3d5 -M 14140c -m e6e3d5 -S cccb76 -s 333200
     ;;
 *)
-    wmenu -bi -f "Iosevka 10" -N 13140c -n e5e3d6 -M 13140c -m e5e3d6 -S c5cd7a -s 2f3300
+    wmenu -bi -f "Iosevka 10" -N 14140c -n e6e3d5 -M 14140c -m e6e3d5 -S cccb76 -s 333200
     ;;
 esac
