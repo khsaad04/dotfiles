@@ -17,7 +17,7 @@ vim.opt.clipboard      = "unnamedplus"
 vim.opt.undofile       = true
 vim.opt.swapfile       = false
 vim.opt.ignorecase     = true
-vim.opt.completeopt    = "fuzzy,menuone,noinsert,popup"
+vim.opt.completeopt    = "fuzzy,menuone,noselect,popup"
 
 -- [[ Colorscheme ]] --
 --
