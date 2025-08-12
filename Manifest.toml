@@ -1,5 +1,9 @@
 wallpaper = "configs/Pictures/wallpapers/wp.jpg"
 
+[variables]
+font_name = "Iosevka"
+font_size = "10"
+
 [files.configs]
 target     = "configs"
 dest       = "~"

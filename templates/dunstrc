@@ -2,7 +2,7 @@
 origin = "bottom-right"
 offset = "10x10"
 frame_width = 0
-font = "Iosevka 10"
+font = "{{font_name}} {{font_size}}"
 format = "<b>%a</b>\n%s <i>%b</i>"
 enable_recursive_icon_lookup = true
 corner_radius = 8

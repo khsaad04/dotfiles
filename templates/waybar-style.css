@@ -10,8 +10,8 @@ tooltip,
 #memory,
 #clock {
   all: initial;
-  font-family: Iosevka;
-  font-size: 10px;
+  font-family: {{font_name}};
+  font-size: {{font_size}}px;
 }
 
 window#waybar {

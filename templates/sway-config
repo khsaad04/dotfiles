@@ -13,7 +13,7 @@ client.focused            #{{primary_container}}     #{{primary}}     #{{on_prim
 client.focused_inactive   #{{secondary_container}}     #{{secondary}}     #{{on_secondary}}     #{{secondary}}     #{{secondary_container}}
 client.unfocused          #{{surface_container}}     #{{surface}}     #{{outline_variant}}     #{{surface}}     #{{surface_container}}
 
-font pango:Iosevka 10 
+font pango:{{font_name}} {{font_size}} 
 
 titlebar_padding 5 1
 default_border normal 1
@@ -26,7 +26,7 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
     gsettings set $gnome-schema color-scheme 'prefer-dark'
-    gsettings set $gnome-schema font-name 'Iosevka 10'
+    gsettings set $gnome-schema font-name '{{font_name}} {{font_size}}'
 }
 
 ### Output configuration
