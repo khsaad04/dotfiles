@@ -65,6 +65,13 @@ require("mini.deps").setup({ path = { package = path_package } })
 
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
+now(function()
+    add({ source = "nvim-treesitter/nvim-treesitter" })
+    require("nvim-treesitter.configs").setup({
+        highlight = { enable = true }
+    })
+end)
+
 later(function()
     -- vim-visual-multi
     vim.g.VM_add_cursor_at_pos_no_mappings = 1
