@@ -1,19 +1,15 @@
-format = "[](fg:#{{primary}})$username[](fg:#{{primary}} bg:#{{primary_container}})$directory[](fg:#{{primary_container}})$all $cmd_duration\n$character"
+format = "$username$directory$git_branch$cmd_duration$line_break$character"
 
 [username]
-format = "[$user]($style)"
-style_root = "bold fg:#{{on_primary}} bg:#{{primary}}"
-style_user = "bold fg:#{{on_primary}} bg:#{{primary}}"
-show_always = true
+format = "[$user]($style) "
+style_root = "bold fg:#{{primary}}"
+style_user = "bold fg:#{{primary}}"
 
 [directory]
-format = "[[ $path]($style)[$read_only]($read_only_style)](bg:surface1)"
-style = "bold fg:#{{on_primary_container}} bg:#{{primary_container}}"
-read_only_style = "bold fg:#{{on_primary_container}} bg:#{{primary_container}}"
-
-[line_break]
-disabled = true
+style = "bold fg:#{{secondary}}"
+read_only_style = "bold fg:#{{secondary}}"
+fish_style_pwd_dir_length = 1
 
 [git_branch]
-format = " [$symbol$branch(:$remote_branch)]($style) "
-style = "bold #{{on_primary_container}}"
+format = "[\\($branch(:$remote_branch)\\)]($style) "
+style = "bold #{{tertiary}}"
