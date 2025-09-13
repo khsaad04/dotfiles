@@ -158,6 +158,8 @@ exec wl-clip-persist -c regular
 exec udiskie -s
 exec fcitx5
 exec firefox
+exec kdeconnectd
+exec kdeconnect-indicator
 
 bar swaybar_command waybar
 
