@@ -217,11 +217,9 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
-user_pref("signon.rememberSignons", true);
 user_pref("browser.search.suggest.enabled", true);
 user_pref("browser.sessionstore.resume_session", true);
 user_pref("ui.key.menuAccessKeyFocuses", false);
-user_pref("signon.formlessCapture.enabled", true);
 user_pref("permissions.default.desktop-notification", 0);
 user_pref("privacy.userContext.enabled", true);
 user_pref("browser.toolbars.bookmarks.visibility", "never");
