@@ -9,9 +9,9 @@ set $menu ~/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
-client.focused            #4a4900     #cccb76     #333200     #cccb76     #4a4900
-client.focused_inactive   #49482d     #cbc8a4     #323218     #cbc8a4     #49482d
-client.unfocused          #202018     #14140c     #48473a     #14140c     #202018
+client.focused            #004d63     #8ad0ef     #003545     #8ad0ef     #004d63
+client.focused_inactive   #354a53     #b4cad5     #1e333c     #b4cad5     #354a53
+client.unfocused          #1b2023     #0f1417     #40484c     #0f1417     #1b2023
 
 font pango:Iosevka 10 
 
@@ -30,7 +30,7 @@ exec_always {
 }
 
 ### Output configuration
-output * bg /home/khsaad/dotfiles/configs/Pictures/wallpapers/wp.jpg fill
+output * bg /home/khsaad/dotfiles/configs/Pictures/wallpapers/bliss.jpg fill
 
 ### Input configuration
 input "type:pointer" {
