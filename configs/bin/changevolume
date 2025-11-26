@@ -2,7 +2,7 @@
 
 icon_path="$HOME/Pictures/icons"
 amount=${2:-5}
-id_output="8052"
+id_output="80085"
 timeout=2000
 is_muted_output=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '[]')
 

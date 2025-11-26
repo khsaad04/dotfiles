@@ -138,8 +138,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Utilities
-bindsym --locked XF86AudioRaiseVolume exec ~/bin/changevolume up 5
-bindsym --locked XF86AudioLowerVolume exec ~/bin/changevolume down 5
+bindsym --locked XF86AudioRaiseVolume exec ~/bin/changevolume up
+bindsym --locked XF86AudioLowerVolume exec ~/bin/changevolume down
 bindsym --locked XF86AudioMute exec ~/bin/changevolume mute
 bindsym --no-repeat Print exec grimshot --notify savecopy
 bindsym --no-repeat Shift+Print exec grimshot --notify savecopy area

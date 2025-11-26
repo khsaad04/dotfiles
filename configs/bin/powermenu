@@ -4,16 +4,22 @@ entries="󰗼 Exit\n Shutdown\n⏾ Suspend\n󰒲 Hibernate\n Reboot"
 
 selected=$(echo -e "$entries"|~/bin/wmenu-custom| awk '{print tolower($2)}')
 
+if ! command -v systemctl >/dev/null 2>&1
+then
+    ctl=loginctl
+else
+    ctl=systemctl
+fi
+
 case "$selected" in
     exit)
         swaymsg exit;;
     shutdown)
-        loginctl poweroff;;
+        $ctl poweroff;;
     suspend)
-        loginctl suspend;;
+        $ctl suspend;;
     hibernate)
-        loginctl hibernate;;
+        $ctl hibernate;;
     reboot)
-        loginctl reboot;;
+        $ctl reboot;;
 esac
-
