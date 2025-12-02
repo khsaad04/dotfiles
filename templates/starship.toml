@@ -1,4 +1,4 @@
-format = "$username$directory$git_branch$cmd_duration$line_break$character"
+format = "$username$directory$all$cmd_duration$line_break$character"
 
 [username]
 format = "[$user]($style) "
