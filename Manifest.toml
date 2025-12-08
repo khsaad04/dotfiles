@@ -8,8 +8,6 @@ font_size = "10"
 target     = "configs"
 dest       = "~"
 recursive  = true
-pre_hooks  = [ "mkdir /home/khsaad/.local/state/vim" ]
-post_hooks = [ "xdg-user-dirs-update" ]
 
 [files]
 dunst    = { dest="~/.config/dunst/dunstrc",            template="templates/dunstrc"              }
