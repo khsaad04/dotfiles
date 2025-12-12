@@ -5,17 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs =
-    { nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      mkHost =
-        hostName:
+      mkHost = hostName:
         inputs.nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
+          specialArgs = { inherit inputs; };
           modules = [
             ./nixos/hosts/${hostName}/configuration.nix
             ./nixos/hosts/${hostName}/hardware-configuration.nix
@@ -28,7 +22,5 @@
       nixosConfigurations = {
         desktop = mkHost "desktop";
       };
-      packages.${system} = import ./packages { inherit pkgs; };
-      formatter.${system} = inputs.self.packages.${system}.formatter;
     };
 }
