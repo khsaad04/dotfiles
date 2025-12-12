@@ -1,15 +1,15 @@
 format = "$username$directory$all$cmd_duration$line_break$character"
 
 [username]
-format = "[$user]($style) "
+format     = "[$user]($style) "
 style_root = "bold fg:#{{primary}}"
 style_user = "bold fg:#{{primary}}"
 
 [directory]
-style = "bold fg:#{{secondary}}"
+style           = "bold fg:#{{secondary}}"
 read_only_style = "bold fg:#{{secondary}}"
 fish_style_pwd_dir_length = 1
 
 [git_branch]
 format = "[\\($branch(:$remote_branch)\\)]($style) "
-style = "bold #{{tertiary}}"
+style  = "bold #{{tertiary}}"

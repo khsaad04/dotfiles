@@ -1,26 +1,26 @@
 [global]
-origin = "bottom-right"
-offset = "10x10"
+origin      = "bottom-right"
+offset      = "10x10"
 frame_width = 0
-font = "Iosevka 10"
-format = "<b>%a</b>\n%s <i>%b</i>"
+font        = "Iosevka 10"
+format      = "<b>%a</b>\n%s <i>%b</i>"
 enable_recursive_icon_lookup = true
 corner_radius = 8
-markup = "full"
+markup        = "full"
 
 [urgency_low]
 background = "#303538"
 foreground = "#dfe3e6"
-highlight = "#dfe3e6"
-timeout = 10
+highlight  = "#dfe3e6"
+timeout    = 10
 
 [urgency_normal]
 background = "#303538"
 foreground = "#dfe3e6"
-highlight = "#dfe3e6"
-timeout = 10
+highlight  = "#dfe3e6"
+timeout    = 10
 
 [urgency_critical]
 background = "#ffb4ab"
 foreground = "#690005"
-timeout = 0
+timeout    = 0

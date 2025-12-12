@@ -1,4 +1,4 @@
-indent_type = "Spaces"
+indent_type  = "Spaces"
 indent_width = 4
-quote_style = "ForceDouble"
+quote_style  = "ForceDouble"
 line_endings = "Unix"
