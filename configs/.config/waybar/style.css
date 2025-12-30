@@ -15,12 +15,12 @@ tooltip,
 }
 
 window#waybar {
-  background-color: #0f1513;
+  background-color: #1b211f;
   color: #dee4e0;
 }
 
 tooltip {
-  background-color: #0f1513;
+  background-color: #1b211f;
   color: #dee4e0;
   border: 1px solid #89938e;
   border-radius: 2px;
@@ -43,7 +43,7 @@ tooltip {
 
 #workspaces button.active,
 #workspaces button.focused {
-  background-color: #dee4e0;
+  background-color: #86d6bf;
 }
 
 #workspaces button label {
@@ -52,7 +52,7 @@ tooltip {
 
 #workspaces button.active label,
 #workspaces button.focused label {
-  color: #303634;
+  color: #00382d;
 }
 
 #mpris {
