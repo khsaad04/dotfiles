@@ -9,15 +9,15 @@ corner_radius = 8
 markup        = "full"
 
 [urgency_low]
-background = "#303538"
-foreground = "#dfe3e6"
-highlight  = "#dfe3e6"
+background = "#303634"
+foreground = "#dee4e0"
+highlight  = "#dee4e0"
 timeout    = 10
 
 [urgency_normal]
-background = "#303538"
-foreground = "#dfe3e6"
-highlight  = "#dfe3e6"
+background = "#303634"
+foreground = "#dee4e0"
+highlight  = "#dee4e0"
 timeout    = 10
 
 [urgency_critical]
