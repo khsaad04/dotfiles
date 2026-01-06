@@ -1,14 +1,14 @@
--- Full border https://yazi-rs.github.io/docs/tips#full-border
+-- Taken from: https://github.com/yazi-rs/plugins/tree/main/full-border.yazi
 local type = opts and opts.type or ui.Border.ROUNDED
 local old_build = Tab.build
 
 Tab.build = function(self, ...)
     local bar = function(c, x, y)
         if x <= 0 or x == self._area.w - 1 or th.mgr.border_symbol ~= "│" then
-            return ui.Bar(ui.Bar.TOP)
+            return ui.Bar(ui.Edge.TOP)
         end
 
-        return ui.Bar(ui.Bar.TOP)
+        return ui.Bar(ui.Edge.TOP)
             :area(ui.Rect({
                 x = x,
                 y = math.max(0, y),
@@ -27,9 +27,9 @@ Tab.build = function(self, ...)
 
     local style = th.mgr.border_style
     self._base = ya.list_merge(self._base or {}, {
-        ui.Border(ui.Border.ALL):area(self._area):type(type):style(style),
-        ui.Bar(ui.Bar.RIGHT):area(self._chunks[1]):style(style),
-        ui.Bar(ui.Bar.LEFT):area(self._chunks[3]):style(style),
+        ui.Border(ui.Edge.ALL):area(self._area):type(type):style(style),
+        ui.Bar(ui.Edge.RIGHT):area(self._chunks[1]):style(style),
+        ui.Bar(ui.Edge.LEFT):area(self._chunks[3]):style(style),
 
         bar("┬", c[1].right - 1, c[1].y),
         bar("┴", c[1].right - 1, c[1].bottom - 1),
@@ -40,7 +40,7 @@ Tab.build = function(self, ...)
     old_build(self, ...)
 end
 
--- Show symlink in status bar https://yazi-rs.github.io/docs/tips#symlink-in-status
+-- Taken from: https://yazi-rs.github.io/docs/tips/#symlink-in-status
 Status:children_add(function(self)
     local h = self._current.hovered
     if h and h.link_to then
@@ -50,7 +50,7 @@ Status:children_add(function(self)
     end
 end, 3300, Status.LEFT)
 
--- Show username and hostname in header https://yazi-rs.github.io/docs/tips#username-hostname-in-header
+-- Taken from: https://yazi-rs.github.io/docs/tips/#username-hostname-in-header
 Header:children_add(function()
     if ya.target_family() ~= "unix" then
         return ""

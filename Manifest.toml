@@ -1,22 +1,40 @@
+[options]
 wallpaper = "configs/Pictures/wallpapers/penger_field_work.png"
 
 [variables]
 font_name = "Iosevka"
 font_size = "10"
 
-[files.configs]
-target     = "configs"
-dest       = "~"
-recursive  = true
+[entries]
+dunst    = [ { target = "./configs/dunst/dunstrc",    template = "./templates/dunstrc",       dest = "~/.config/dunst/dunstrc"  } ]
+foot     = [ { target = "./configs/foot/foot.ini",    template = "./templates/foot.ini",      dest = "~/.config/foot/foot.ini"  } ]
+starship = [ { target = "./configs/starship.toml",    template = "./templates/starship.toml", dest = "~/.config/starship.toml"  } ]
+sway     = [ { target = "./configs/sway/config",      template = "./templates/sway-config",   dest = "~/.config/sway/config"    } ]
+tmux     = [ { target = "./configs/tmux/tmux.conf",   template = "./templates/tmux.conf",     dest = "~/.config/tmux/tmux.conf" } ]
+wmenu    = [ { target = "./configs/bin/wmenu-custom", template = "./templates/wmenu-custom",  dest = "~/bin/wmenu-custom"       } ]
 
-[files]
-dunst    = { dest="~/.config/dunst/dunstrc",            template="templates/dunstrc"              }
-foot     = { dest="~/.config/foot/foot.ini",            template="templates/foot.ini"             }
-gtk3css  = { dest="~/.config/gtk-3.0/gtk.css",          template="templates/gtk.css"              }
-gtk4css  = { dest="~/.config/gtk-4.0/gtk.css",          template="templates/gtk.css"              }
-nvim     = { dest="~/.config/nvim/lua/colorscheme.lua", template="templates/nvim-colorscheme.lua" }
-sway     = { dest="~/.config/sway/config",              template="templates/sway-config"          }
-tmux     = { dest="~/.config/tmux/tmux.conf",           template="templates/tmux.conf"            }
-wmenu    = { dest="~/bin/wmenu-custom",                 template="templates/wmenu-custom"         }
-waybar   = { dest="~/.config/waybar/style.css",         template="templates/waybar-style.css"     }
-starship = { dest="~/.config/starship.toml",            template="templates/starship.toml"        }
+emacs    = [ { target = "./configs/emacs/init.el",    dest = "~/.emacs.d/init.el"                } ]
+firefox  = [ { target = "./configs/firefox/user.js",  dest = "~/.mozilla/firefox/khsaad/user.js" } ]
+fish     = [ { target = "./configs/fish/config.fish", dest = "~/.config/fish/config.fish"        } ]
+git      = [ { target = "./configs/git/config",       dest = "~/.config/git/config"              } ]
+ripgrep  = [ { target = "./configs/ripgreprc",        dest = "~/.config/ripgreprc"               } ]
+
+bins     = [ { target = "./configs/bin",      dest = "~/bin",            recursive = true } ]
+fcitx    = [ { target = "./configs/fcitx5",   dest = "~/.config/fcitx5", recursive = true } ]
+pictures = [ { target = "./configs/Pictures", dest = "~/Pictures",       recursive = true } ]
+yazi     = [ { target = "./configs/yazi",     dest = "~/.config/yazi",   recursive = true } ]
+
+gtk = [
+    { target = "./configs/gtk/gtk.css", template = "templates/gtk.css", dest = "~/.config/gtk-3.0/gtk.css" },
+    { target = "./configs/gtk/gtk.css", template = "templates/gtk.css", dest = "~/.config/gtk-4.0/gtk.css" },
+]
+
+nvim = [
+    { target   = "./configs/nvim",                   dest = "~/.config/nvim", recursive = true   },
+    { template = "./templates/nvim-colorscheme.lua", dest = "~/.config/nvim/lua/colorscheme.lua" },
+]
+
+waybar = [
+    { target   = "./configs/waybar",             dest = "~/.config/waybar", recursive = true },
+    { template = "./templates/waybar-style.css", dest = "~/.config/waybar/style.css"         },
+]
