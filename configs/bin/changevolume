@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-icon_path="$HOME/Pictures/icons"
+icon_path="$(dirname "$0")/icons"
 amount=${2:-5}
 id_output="80085"
 timeout=2000

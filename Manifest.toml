@@ -1,5 +1,5 @@
 [options]
-wallpaper = "configs/Pictures/wallpapers/penger_field_work.png"
+wallpaper = "~/Pictures/wallpapers/wp.png"
 
 [variables]
 font_name = "Iosevka"
@@ -19,10 +19,9 @@ fish     = [ { target = "./configs/fish/config.fish", dest = "~/.config/fish/con
 git      = [ { target = "./configs/git/config",       dest = "~/.config/git/config"              } ]
 ripgrep  = [ { target = "./configs/ripgreprc",        dest = "~/.config/ripgreprc"               } ]
 
-bins     = [ { target = "./configs/bin",      dest = "~/bin",            recursive = true } ]
-fcitx    = [ { target = "./configs/fcitx5",   dest = "~/.config/fcitx5", recursive = true } ]
-pictures = [ { target = "./configs/Pictures", dest = "~/Pictures",       recursive = true } ]
-yazi     = [ { target = "./configs/yazi",     dest = "~/.config/yazi",   recursive = true } ]
+bins  = [ { target = "./configs/bin",    dest = "~/bin",            recursive = true } ]
+fcitx = [ { target = "./configs/fcitx5", dest = "~/.config/fcitx5", recursive = true } ]
+yazi  = [ { target = "./configs/yazi",   dest = "~/.config/yazi",   recursive = true } ]
 
 gtk = [
     { target = "./configs/gtk/gtk.css", template = "templates/gtk.css", dest = "~/.config/gtk-3.0/gtk.css" },

@@ -30,7 +30,7 @@ exec_always {
 }
 
 ### Output configuration
-output * bg /home/khsaad/dotfiles/configs/Pictures/wallpapers/penger_field_work.png fill
+output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 
 ### Input configuration
 input "type:pointer" {
