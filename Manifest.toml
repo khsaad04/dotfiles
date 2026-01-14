@@ -8,6 +8,7 @@ font_size = "10"
 [entries]
 dunst    = [ { target = "./configs/dunst/dunstrc",    template = "./templates/dunstrc",       dest = "~/.config/dunst/dunstrc"  } ]
 foot     = [ { target = "./configs/foot/foot.ini",    template = "./templates/foot.ini",      dest = "~/.config/foot/foot.ini"  } ]
+nvim     = [ { target = "./configs/nvim/init.lua",    template = "./templates/nvim-init.lua", dest = "~/.config/nvim/init.lua"  } ]
 starship = [ { target = "./configs/starship.toml",    template = "./templates/starship.toml", dest = "~/.config/starship.toml"  } ]
 sway     = [ { target = "./configs/sway/config",      template = "./templates/sway-config",   dest = "~/.config/sway/config"    } ]
 tmux     = [ { target = "./configs/tmux/tmux.conf",   template = "./templates/tmux.conf",     dest = "~/.config/tmux/tmux.conf" } ]
@@ -25,11 +26,6 @@ yazi  = [ { target = "./configs/yazi",   dest = "~/.config/yazi",   recursive = 
 gtk = [
     { target = "./configs/gtk/gtk.css", template = "templates/gtk.css", dest = "~/.config/gtk-3.0/gtk.css" },
     { target = "./configs/gtk/gtk.css", template = "templates/gtk.css", dest = "~/.config/gtk-4.0/gtk.css" },
-]
-
-nvim = [
-    { target   = "./configs/nvim",                   dest = "~/.config/nvim", recursive = true   },
-    { template = "./templates/nvim-colorscheme.lua", dest = "~/.config/nvim/lua/colorscheme.lua" },
 ]
 
 waybar = [
