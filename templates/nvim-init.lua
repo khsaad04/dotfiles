@@ -8,7 +8,7 @@ vim.opt.expandtab      = true
 vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 vim.opt.wrap           = false
-vim.opt.scrolloff      = 999
+vim.opt.scrolloff      = 4
 vim.opt.virtualedit    = "block"
 vim.opt.signcolumn     = "yes"
 vim.opt.hlsearch       = false
@@ -16,7 +16,6 @@ vim.opt.clipboard      = "unnamedplus"
 vim.opt.undofile       = true
 vim.opt.swapfile       = false
 vim.opt.ignorecase     = true
-vim.opt.completeopt    = "fuzzy,menuone,noselect,popup"
 
 -- [[ Colorscheme ]] --
 --
@@ -41,10 +40,7 @@ vim.cmd("hi PmenuThumb    guibg=#{{surface_container_high}}")
 
 -- [[ Keymaps ]] --
 --
-vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
-
-vim.g.mapleader      = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = " "
 
 -- Stay in visual mode while indenting
 vim.keymap.set("v", "<", "<gv")
@@ -133,31 +129,11 @@ later(function()
     -- vim-fugitive
     add({ source = "tpope/vim-fugitive" })
 
-    -- nvim-lspconfig
-    add({ source = "neovim/nvim-lspconfig" })
-
-    vim.lsp.enable({
-        "clangd",
-        "lua_ls",
-        "rust_analyzer",
-    })
-
-    vim.lsp.config("lua_ls", {
-        settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { "vim" },
-                },
-            },
-        },
-    })
-
+    -- blink.cmp
     add({
         source = "saghen/blink.cmp",
         depends = { "rafamadriz/friendly-snippets" },
         checkout = "v1.8.0",
     })
     require("blink.cmp").setup()
-
-    vim.diagnostic.enable(false) -- disable diagnostics by default
 end)
