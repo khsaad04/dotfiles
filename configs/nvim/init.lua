@@ -9,6 +9,7 @@ vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 vim.opt.wrap           = false
 vim.opt.scrolloff      = 4
+vim.opt.sidescrolloff  = 8
 vim.opt.virtualedit    = "block"
 vim.opt.signcolumn     = "yes"
 vim.opt.hlsearch       = false
@@ -16,27 +17,7 @@ vim.opt.clipboard      = "unnamedplus"
 vim.opt.undofile       = true
 vim.opt.swapfile       = false
 vim.opt.ignorecase     = true
-
--- [[ Colorscheme ]] --
---
-vim.cmd("colorscheme retrobox")
-vim.cmd("hi Normal        guifg=#dee4e0 guibg=#0f1513")
-vim.cmd("hi NormalFloat   guibg=#1b211f")
-vim.cmd("hi FloatBorder   guifg=#89938e guibg=#1b211f")
-vim.cmd("hi StatusLine    guifg=#a2f2da guibg=#005142")
-vim.cmd("hi StatusLineNC  guifg=#cde9de guibg=#344c44")
-vim.cmd("hi SignColumn    guibg=#0f1513")
-vim.cmd("hi CursorLine    guibg=#3f4945")
-vim.cmd("hi Pmenu         guifg=#dee4e0 guibg=#1b211f")
-vim.cmd("hi PmenuSel      guifg=#00382d guibg=#86d6bf")
-vim.cmd("hi PmenuMatch    guibg=#1b211f")
-vim.cmd("hi PmenuMatchSel guibg=#86d6bf")
-vim.cmd("hi PmenuKind     guibg=#1b211f")
-vim.cmd("hi PmenuKindSel  guibg=#86d6bf")
-vim.cmd("hi PmenuExtra    guibg=#1b211f")
-vim.cmd("hi PmenuExtraSel guibg=#86d6bf")
-vim.cmd("hi PmenuSbar     guibg=#171d1b")
-vim.cmd("hi PmenuThumb    guibg=#252b29")
+vim.opt.completeopt    = "menuone,popup,noselect"
 
 -- [[ Keymaps ]] --
 --
@@ -79,6 +60,26 @@ require("mini.deps").setup({ path = { package = path_package } })
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 now(function()
+    vim.cmd("colorscheme retrobox")
+
+    vim.cmd("hi Normal        guifg=#dee4e0 guibg=#0f1513")
+    vim.cmd("hi NormalFloat                 guibg=#1b211f")
+    vim.cmd("hi FloatBorder   guifg=#89938e guibg=#1b211f")
+    vim.cmd("hi StatusLine    guifg=#a2f2da guibg=#005142")
+    vim.cmd("hi StatusLineNC  guifg=#cde9de guibg=#344c44")
+    vim.cmd("hi SignColumn                  guibg=#0f1513")
+    vim.cmd("hi CursorLine                  guibg=#3f4945")
+    vim.cmd("hi Pmenu         guifg=#dee4e0 guibg=#1b211f")
+    vim.cmd("hi PmenuSel      guifg=#00382d guibg=#86d6bf")
+    vim.cmd("hi PmenuMatch                  guibg=#1b211f")
+    vim.cmd("hi PmenuMatchSel               guibg=#86d6bf")
+    vim.cmd("hi PmenuKind                   guibg=#1b211f")
+    vim.cmd("hi PmenuKindSel                guibg=#86d6bf")
+    vim.cmd("hi PmenuExtra                  guibg=#1b211f")
+    vim.cmd("hi PmenuExtraSel               guibg=#86d6bf")
+    vim.cmd("hi PmenuSbar                   guibg=#171d1b")
+    vim.cmd("hi PmenuThumb                  guibg=#252b29")
+
     add({ source = "nvim-treesitter/nvim-treesitter" })
     require("nvim-treesitter.configs").setup({
         highlight = { enable = true }
@@ -86,11 +87,6 @@ now(function()
 end)
 
 later(function()
-    -- vim-visual-multi
-    vim.g.VM_add_cursor_at_pos_no_mappings = 1
-    add({ source = "mg979/vim-visual-multi" })
-    vim.keymap.set("n", "<leader>vmm", "<Plug>(VM-Toggle-Mappings)", { desc = "Toggle visual multi mappings" })
-
     -- mini.icons
     require("mini.icons").setup()
 
@@ -122,18 +118,11 @@ later(function()
         MiniPick.builtin.help()
     end, { desc = "Search help" })
 
-    -- gitsigns
-    add({ source = "lewis6991/gitsigns.nvim" })
-    require("gitsigns").setup()
-
     -- vim-fugitive
     add({ source = "tpope/vim-fugitive" })
 
-    -- blink.cmp
-    add({
-        source = "saghen/blink.cmp",
-        depends = { "rafamadriz/friendly-snippets" },
-        checkout = "v1.8.0",
-    })
-    require("blink.cmp").setup()
+    -- vim-visual-multi
+    vim.g.VM_add_cursor_at_pos_no_mappings = 1
+    add({ source = "mg979/vim-visual-multi" })
+    vim.keymap.set("n", "<leader>vmm", "<Plug>(VM-Toggle-Mappings)", { desc = "Toggle visual multi mappings" })
 end)
