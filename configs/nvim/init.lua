@@ -12,12 +12,27 @@ vim.opt.scrolloff      = 4
 vim.opt.sidescrolloff  = 8
 vim.opt.virtualedit    = "block"
 vim.opt.signcolumn     = "yes"
-vim.opt.hlsearch       = false
-vim.opt.clipboard      = "unnamedplus"
+vim.opt.cursorline     = true
+vim.opt.cursorlineopt  = "number"
 vim.opt.undofile       = true
 vim.opt.swapfile       = false
 vim.opt.ignorecase     = true
-vim.opt.completeopt    = "menuone,popup,noselect"
+vim.opt.smartcase      = true
+
+-- [[ Autocmds ]] --
+--
+vim.api.nvim_create_autocmd("UIEnter", {
+  callback = function()
+    vim.opt.clipboard = "unnamedplus"
+  end,
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
 
 -- [[ Keymaps ]] --
 --
@@ -54,6 +69,9 @@ if not vim.loop.fs_stat(mini_path) then
     vim.cmd("echo 'Installed `mini.nvim`' | redraw")
 end
 
+-- Enable nohlsearch
+vim.cmd("packadd nohlsearch")
+
 -- Set up "mini.deps"
 require("mini.deps").setup({ path = { package = path_package } })
 
@@ -69,6 +87,7 @@ now(function()
     vim.cmd("hi StatusLineNC  guifg=#cde9de guibg=#344c44")
     vim.cmd("hi SignColumn                  guibg=#0f1513")
     vim.cmd("hi CursorLine                  guibg=#3f4945")
+    vim.cmd("hi CursorLineNr                guibg=#0f1513")
     vim.cmd("hi Pmenu         guifg=#dee4e0 guibg=#1b211f")
     vim.cmd("hi PmenuSel      guifg=#00382d guibg=#86d6bf")
     vim.cmd("hi PmenuMatch                  guibg=#1b211f")
