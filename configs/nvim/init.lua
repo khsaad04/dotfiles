@@ -100,7 +100,7 @@ now(function()
     vim.cmd("hi PmenuThumb                  guibg=#252b29")
 
     add({ source = "nvim-treesitter/nvim-treesitter" })
-    require("nvim-treesitter.configs").setup({
+    require("nvim-treesitter.config").setup({
         highlight = { enable = true }
     })
 end)
