@@ -14,10 +14,10 @@ sway     = [ { target = "./configs/sway/config",      template = "./templates/sw
 tmux     = [ { target = "./configs/tmux/tmux.conf",   template = "./templates/tmux.conf",     dest = "~/.config/tmux/tmux.conf" } ]
 wmenu    = [ { target = "./bin/wmenu-custom",         template = "./templates/wmenu-custom",  dest = "~/bin/wmenu-custom"       } ]
 
-firefox  = [ { target = "./configs/firefox/user.js",  dest = "~/.mozilla/firefox/khsaad/user.js" } ]
-fish     = [ { target = "./configs/fish/config.fish", dest = "~/.config/fish/config.fish"        } ]
-git      = [ { target = "./configs/git/config",       dest = "~/.config/git/config"              } ]
-ripgrep  = [ { target = "./configs/ripgreprc",        dest = "~/.config/ripgreprc"               } ]
+firefox  = [ { target = "./configs/firefox/user.js",  dest = "~/.config/mozilla/firefox/khsaad/user.js" } ]
+fish     = [ { target = "./configs/fish/config.fish", dest = "~/.config/fish/config.fish"               } ]
+git      = [ { target = "./configs/git/config",       dest = "~/.config/git/config"                     } ]
+ripgrep  = [ { target = "./configs/ripgreprc",        dest = "~/.config/ripgreprc"                      } ]
 
 bins  = [ { target = "./bin",            dest = "~/bin",            recursive = true } ]
 fcitx = [ { target = "./configs/fcitx5", dest = "~/.config/fcitx5", recursive = true } ]
