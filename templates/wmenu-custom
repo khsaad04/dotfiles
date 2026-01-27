@@ -2,12 +2,12 @@
 
 case $1 in
 drun)
-    j4-dmenu-desktop --no-generic --term "footclient" --dmenu='wmenu -bi -f "{{font_name}} {{font_size}}" -N {{surface}} -n {{on_surface}} -M {{surface}} -m {{on_surface}} -S {{primary}} -s {{on_primary}}'
+    j4-dmenu-desktop --no-generic --term "footclient" --dmenu='wmenu -bi -f "{{font_name}} {{font_size}}" -N {{surface_container}} -n {{on_surface}} -M {{surface_container}} -m {{on_surface}} -S {{primary}} -s {{on_primary}}'
     ;;
 run)
-    wmenu-run -bi -f "{{font_name}} {{font_size}}" -N {{surface}} -n {{on_surface}} -M {{surface}} -m {{on_surface}} -S {{primary}} -s {{on_primary}}
+    wmenu-run -bi -f "{{font_name}} {{font_size}}" -N {{surface_container}} -n {{on_surface}} -M {{surface_container}} -m {{on_surface}} -S {{primary}} -s {{on_primary}}
     ;;
 *)
-    wmenu -bi -f "{{font_name}} {{font_size}}" -N {{surface}} -n {{on_surface}} -M {{surface}} -m {{on_surface}} -S {{primary}} -s {{on_primary}}
+    wmenu -bi -f "{{font_name}} {{font_size}}" -N {{surface_container}} -n {{on_surface}} -M {{surface_container}} -m {{on_surface}} -S {{primary}} -s {{on_primary}}
     ;;
 esac
