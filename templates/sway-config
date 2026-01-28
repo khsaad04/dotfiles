@@ -154,7 +154,6 @@ exec pipewire
 exec dunst
 exec nm-applet --indicator
 exec wl-clip-persist -c regular
-exec udiskie -s
 exec fcitx5
 exec firefox
 exec kdeconnect-indicator
