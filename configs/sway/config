@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 set $term foot
-set $menu ~/bin/wmenu-custom
+set $menu ~/.local/bin/wmenu-custom
 
 ### Appearance
 # class                   border      background  text        indicator   child_border
@@ -53,7 +53,7 @@ bindsym $mod+d exec $menu drun
 bindsym $mod+Shift+d exec $menu run
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec ~/bin/powermenu
+bindsym $mod+Shift+e exec ~/.local/bin/powermenu
 
 # Moving around:
 bindsym $mod+$left focus left
@@ -138,9 +138,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Utilities
-bindsym --locked XF86AudioRaiseVolume exec ~/bin/changevolume up
-bindsym --locked XF86AudioLowerVolume exec ~/bin/changevolume down
-bindsym --locked XF86AudioMute exec ~/bin/changevolume mute
+bindsym --locked XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
+bindsym --locked XF86AudioLowerVolume exec ~/.local/bin/changevolume down
+bindsym --locked XF86AudioMute exec ~/.local/bin/changevolume mute
 bindsym --no-repeat Print exec grimshot --notify savecopy
 bindsym --no-repeat Shift+Print exec grimshot --notify savecopy area
 bindsym --no-repeat Ctrl+Print exec grimshot --notify savecopy window

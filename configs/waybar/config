@@ -64,9 +64,9 @@
             "headphone": "󰋋"
         },
         "format-muted": "󰝟 muted",
-        "on-click": "~/bin/changevolume mute",
-        "on-scroll-down": "~/bin/changevolume down 5",
-        "on-scroll-up": "~/bin/changevolume up 5",
+        "on-click": "~/.local/bin/changevolume mute",
+        "on-scroll-down": "~/.local/bin/changevolume down 5",
+        "on-scroll-up": "~/.local/bin/changevolume up 5",
         "tooltip": false,
     },
     "cpu": {
