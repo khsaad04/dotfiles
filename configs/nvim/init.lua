@@ -87,7 +87,7 @@ now(function()
     vim.cmd("hi StatusLineNC  guifg=#cde9de guibg=#344c44")
     vim.cmd("hi SignColumn                  guibg=#0f1513")
     vim.cmd("hi CursorLine                  guibg=#3f4945")
-    vim.cmd("hi CursorLineNr                guibg=#0f1513")
+    vim.cmd("hi CursorLineNr  guifg=#86d6bf guibg=#0f1513")
     vim.cmd("hi Pmenu         guifg=#dee4e0 guibg=#1b211f")
     vim.cmd("hi PmenuSel      guifg=#00382d guibg=#86d6bf")
     vim.cmd("hi PmenuMatch                  guibg=#1b211f")
@@ -99,8 +99,8 @@ now(function()
     vim.cmd("hi PmenuSbar                   guibg=#171d1b")
     vim.cmd("hi PmenuThumb                  guibg=#252b29")
 
-    add({ source = "nvim-treesitter/nvim-treesitter" })
-    require("nvim-treesitter.config").setup({
+    add({ source = "nvim-treesitter/nvim-treesitter", checkout = "master" })
+    require("nvim-treesitter.configs").setup({
         highlight = { enable = true }
     })
 end)
