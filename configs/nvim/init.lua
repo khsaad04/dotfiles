@@ -144,4 +144,26 @@ later(function()
     vim.g.VM_add_cursor_at_pos_no_mappings = 1
     add({ source = "mg979/vim-visual-multi" })
     vim.keymap.set("n", "<leader>vmm", "<Plug>(VM-Toggle-Mappings)", { desc = "Toggle visual multi mappings" })
+
+    -- nvim-lspconfig
+    add({ source = "neovim/nvim-lspconfig" })
+
+    vim.lsp.enable({
+        "clangd",
+        "rust_analyzer",
+    })
+
+    vim.lsp.config("*", {
+        single_file_support = true,
+    })
+
+    vim.diagnostic.enable(false) -- disable diagnostics
+
+    -- blink.cmp
+    add({
+        source = "saghen/blink.cmp",
+        depends = { "rafamadriz/friendly-snippets" },
+        checkout = "v1.8.0",
+    })
+    require("blink.cmp").setup()
 end)
