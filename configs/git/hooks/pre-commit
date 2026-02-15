@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+KEYWORD="nocheckin"
+
+FOUND=$(git diff --cached -- ':!*pre-commit' | grep $KEYWORD | wc -l)
+
+if [[ $FOUND -gt 0 ]]; then
+    echo "Keyword: $KEYWORD detected. Cannot commit."
+    git diff --cached -- ':!*pre-commit' | grep -rn $KEYWORD
+    exit 1
+fi

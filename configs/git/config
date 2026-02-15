@@ -1,3 +1,6 @@
 [user]
 email = "khsaad0404@gmail.com"
 name  = "khsaad04"
+
+[core]
+hooksPath = "~/.config/git/hooks"
