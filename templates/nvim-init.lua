@@ -1,7 +1,6 @@
 -- [[ Options ]] --
 --
 vim.opt.number         = true
--- vim.opt.relativenumber = true
 vim.opt.softtabstop    = 4
 vim.opt.shiftwidth     = 4
 vim.opt.expandtab      = true
@@ -11,7 +10,6 @@ vim.opt.wrap           = false
 vim.opt.scrolloff      = 4
 vim.opt.sidescrolloff  = 8
 vim.opt.virtualedit    = "block"
-vim.opt.signcolumn     = "yes"
 vim.opt.cursorline     = true
 vim.opt.cursorlineopt  = "number"
 vim.opt.undofile       = true
@@ -50,120 +48,116 @@ vim.keymap.set("n", "yo", function()
     vim.api.nvim_win_set_cursor(0, { pos[1] + 1, pos[2] })
 end, { desc = "Copy line below and save cursor position" })
 
+-- [[ Colorscheme ]] --
+--
+vim.cmd("colorscheme retrobox")
+
+vim.cmd("hi Normal        guifg=#{{on_surface}} guibg=#{{surface}}")
+vim.cmd("hi NormalFloat                 guibg=#{{surface_container}}")
+vim.cmd("hi FloatBorder   guifg=#{{outline}} guibg=#{{surface_container}}")
+vim.cmd("hi StatusLine    guifg=#{{on_primary_container}} guibg=#{{primary_container}}")
+vim.cmd("hi StatusLineNC  guifg=#{{on_secondary_container}} guibg=#{{secondary_container}}")
+vim.cmd("hi CursorLine                  guibg=#{{surface_variant}}")
+vim.cmd("hi CursorLineNr  guifg=#{{primary}} guibg=#{{surface}}")
+vim.cmd("hi Pmenu         guifg=#{{on_surface}} guibg=#{{surface_container}}")
+vim.cmd("hi PmenuSel      guifg=#{{on_primary}} guibg=#{{primary}}")
+vim.cmd("hi PmenuMatch                  guibg=#{{surface_container}}")
+vim.cmd("hi PmenuMatchSel               guibg=#{{primary}}")
+vim.cmd("hi PmenuKind                   guibg=#{{surface_container}}")
+vim.cmd("hi PmenuKindSel                guibg=#{{primary}}")
+vim.cmd("hi PmenuExtra                  guibg=#{{surface_container}}")
+vim.cmd("hi PmenuExtraSel               guibg=#{{primary}}")
+vim.cmd("hi PmenuSbar                   guibg=#{{surface_container_low}}")
+vim.cmd("hi PmenuThumb                  guibg=#{{surface_container_high}}")
+
+
 -- [[ Plugins ]] --
 --
--- Clone "mini.nvim" manually in a way that it gets managed by "mini.deps"
-local path_package = vim.fn.stdpath("data") .. "/site/"
-local mini_path    = path_package .. "pack/deps/start/mini.nvim"
-if not vim.loop.fs_stat(mini_path) then
-    vim.cmd("echo 'Installing `mini.nvim`' | redraw")
-    local clone_cmd = {
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/echasnovski/mini.nvim",
-        mini_path,
-    }
-    vim.fn.system(clone_cmd)
-    vim.cmd("packadd mini.nvim | helptags ALL")
-    vim.cmd("echo 'Installed `mini.nvim`' | redraw")
-end
 
--- Enable nohlsearch
+-- nohlsearch
 vim.cmd("packadd nohlsearch")
 
--- Set up "mini.deps"
-require("mini.deps").setup({ path = { package = path_package } })
+-- nvim-treesitter
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local parsers = { "lua", "c", "rust" }
+require("nvim-treesitter").install(parsers)
 
-now(function()
-    vim.cmd("colorscheme retrobox")
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(args)
+        local buf, filetype = args.buf, args.match
+        local language = vim.treesitter.language.get_lang(filetype)
 
-    vim.cmd("hi Normal        guifg=#{{on_surface}} guibg=#{{surface}}")
-    vim.cmd("hi NormalFloat                 guibg=#{{surface_container}}")
-    vim.cmd("hi FloatBorder   guifg=#{{outline}} guibg=#{{surface_container}}")
-    vim.cmd("hi StatusLine    guifg=#{{on_primary_container}} guibg=#{{primary_container}}")
-    vim.cmd("hi StatusLineNC  guifg=#{{on_secondary_container}} guibg=#{{secondary_container}}")
-    vim.cmd("hi SignColumn                  guibg=#{{surface}}")
-    vim.cmd("hi CursorLine                  guibg=#{{surface_variant}}")
-    vim.cmd("hi CursorLineNr  guifg=#{{primary}} guibg=#{{surface}}")
-    vim.cmd("hi Pmenu         guifg=#{{on_surface}} guibg=#{{surface_container}}")
-    vim.cmd("hi PmenuSel      guifg=#{{on_primary}} guibg=#{{primary}}")
-    vim.cmd("hi PmenuMatch                  guibg=#{{surface_container}}")
-    vim.cmd("hi PmenuMatchSel               guibg=#{{primary}}")
-    vim.cmd("hi PmenuKind                   guibg=#{{surface_container}}")
-    vim.cmd("hi PmenuKindSel                guibg=#{{primary}}")
-    vim.cmd("hi PmenuExtra                  guibg=#{{surface_container}}")
-    vim.cmd("hi PmenuExtraSel               guibg=#{{primary}}")
-    vim.cmd("hi PmenuSbar                   guibg=#{{surface_container_low}}")
-    vim.cmd("hi PmenuThumb                  guibg=#{{surface_container_high}}")
+        if not language then return end
+        if not vim.treesitter.language.add(language) then return end
 
-    add({ source = "nvim-treesitter/nvim-treesitter", checkout = "master" })
-    require("nvim-treesitter.configs").setup({
-        highlight = { enable = true }
-    })
-end)
+        vim.treesitter.start(buf, language)
+    end,
+})
 
-later(function()
-    -- mini.icons
-    require("mini.icons").setup()
+-- mini.nvim --
+--
+vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
 
-    -- mini.files
-    require("mini.files").setup({
-        mappings = {
-            go_in_plus = "<CR>",
-        },
-    })
+-- mini.icons
+require("mini.icons").setup()
 
-    vim.keymap.set("n", "<C-e>", function()
-        if not MiniFiles.close() then
-            MiniFiles.open(vim.api.nvim_buf_get_name(0))
-        end
-    end, { desc = "Toggle file explorer" })
+-- mini.files
+require("mini.files").setup({
+    mappings = {
+        go_in_plus = "<CR>",
+    },
+})
 
-    -- mini.pick
-    require("mini.pick").setup()
+vim.keymap.set("n", "<C-e>", function()
+    if not MiniFiles.close() then
+        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+    end
+end, { desc = "Toggle file explorer" })
 
-    vim.keymap.set("n", "<leader>sf", function()
-        MiniPick.builtin.files()
-    end, { desc = "Search files" })
+-- mini.pick
+require("mini.pick").setup()
 
-    vim.keymap.set("n", "<leader>sg", function()
-        MiniPick.builtin.grep_live()
-    end, { desc = "Search by grep" })
+vim.keymap.set("n", "<leader>sf", function()
+    MiniPick.builtin.files()
+end, { desc = "Search files" })
 
-    vim.keymap.set("n", "<leader>sh", function()
-        MiniPick.builtin.help()
-    end, { desc = "Search help" })
+vim.keymap.set("n", "<leader>sg", function()
+    MiniPick.builtin.grep_live()
+end, { desc = "Search by grep" })
 
-    -- vim-fugitive
-    add({ source = "tpope/vim-fugitive" })
+vim.keymap.set("n", "<leader>sh", function()
+    MiniPick.builtin.help()
+end, { desc = "Search help" })
 
-    -- vim-visual-multi
-    vim.g.VM_add_cursor_at_pos_no_mappings = 1
-    add({ source = "mg979/vim-visual-multi" })
-    vim.keymap.set("n", "<leader>vmm", "<Plug>(VM-Toggle-Mappings)", { desc = "Toggle visual multi mappings" })
+-- vim-fugitive
+vim.pack.add({ "https://github.com/tpope/vim-fugitive" })
 
-    -- nvim-lspconfig
-    add({ source = "neovim/nvim-lspconfig" })
+-- vim-visual-multi
+vim.g.VM_add_cursor_at_pos_no_mappings = 1
+vim.pack.add({ "https://github.com/mg979/vim-visual-multi" })
+vim.keymap.set("n", "<leader>vmm", "<Plug>(VM-Toggle-Mappings)", { desc = "Toggle visual multi mappings" })
 
-    vim.lsp.enable({
-        "clangd",
-        "rust_analyzer",
-    })
+-- nvim-lspconfig
+vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 
-    vim.lsp.config("*", {
-        single_file_support = true,
-    })
+vim.lsp.enable({
+    "clangd",
+    "rust_analyzer",
+})
 
-    vim.diagnostic.enable(false) -- disable diagnostics
+vim.lsp.config("*", {
+    single_file_support = true,
+})
 
-    -- blink.cmp
-    add({
-        source = "saghen/blink.cmp",
-        depends = { "rafamadriz/friendly-snippets" },
-        checkout = "v1.8.0",
-    })
-    require("blink.cmp").setup()
-end)
+vim.diagnostic.enable(false) -- disable diagnostics
+
+-- blink.cmp
+vim.pack.add({ "https://github.com/rafamadriz/friendly-snippets" }) -- dependency
+vim.pack.add({
+    {
+        src = "https://github.com/saghen/blink.cmp",
+        version = "v1.10.1",
+    },
+})
+require("blink.cmp").setup()
