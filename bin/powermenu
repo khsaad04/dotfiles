@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 entries="󰗼 Exit\n Shutdown\n⏾ Suspend\n󰒲 Hibernate\n Reboot"
-
 selected=$(echo -e "$entries"|~/.local/bin/wmenu-custom| awk '{print tolower($2)}')
 
 if ! command -v systemctl >/dev/null 2>&1

@@ -15,7 +15,6 @@ function notification_mute {
 }
 
 case $1 in
-# Output
 up)
     wpctl set-volume @DEFAULT_AUDIO_SINK@ "$amount"%+
     volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
@@ -24,7 +23,6 @@ up)
     icon="$icon_path/vol-up.png"
     id=$id_output
     notification_bar;;
-
 down)
     wpctl set-volume @DEFAULT_AUDIO_SINK@ "$amount"%-
     volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
@@ -33,7 +31,6 @@ down)
     icon="$icon_path/vol-down.png"
     id=$id_output
     notification_bar;;
-
 mute)
     echo "$is_muted_output"
     if [ "$is_muted_output" == "[]" ]; then
