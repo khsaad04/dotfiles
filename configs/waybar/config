@@ -13,45 +13,44 @@
     "modules-right": [
         "network",
         "pulseaudio",
+        "backlight",
         "cpu",
         "memory",
+        "battery",
         "clock",
         "tray",
     ],
     "mpris#player": {
         "format": "{player_icon}",
+        "player-icons": { "firefox": "󰈹" },
+        "tooltip-format": "{dynamic}",
         "interval": 1,
-        "player-icons": {
-            "firefox": "󰈹",
-            "spotify": ""
-        },
-        "tooltip-format": "{dynamic}"
     },
     "mpris#prev": {
         "format": "󰒮",
         "on-click": "playerctl previous",
-        "tooltip": false
+        "tooltip": false,
     },
     "mpris#status": {
         "format": "{status_icon}",
-        "interval": 1,
-        "on-click": "playerctl play-pause",
         "status-icons": {
             "paused": "󰐊",
-            "playing": ""
+            "playing": "",
         },
-        "tooltip": false
+        "on-click": "playerctl play-pause",
+        "tooltip": false,
+        "interval": 1,
     },
     "mpris#next": {
         "format": "󰒭",
         "on-click": "playerctl next",
-        "tooltip": false
+        "tooltip": false,
     },
     "network": {
         "format-wifi": "󰖩 ({signalStrength}%)",
         "format-ethernet": "󰈀 ({bandwidthTotalBytes})",
         "tooltip-format": "{essid} ({signalStrength}%) IP: {ipaddr}",
-        "tooltip-format-disconnected": ""
+        "tooltip-format-disconnected": "",
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -59,14 +58,21 @@
             "default": [
                 "",
                 "",
-                ""
+                "",
             ],
-            "headphone": "󰋋"
+            "headphone": "󰋋",
         },
         "format-muted": "󰝟 muted",
         "on-click": "~/.local/bin/changevolume mute",
-        "on-scroll-down": "~/.local/bin/changevolume down 5",
-        "on-scroll-up": "~/.local/bin/changevolume up 5",
+        "on-scroll-down": "~/.local/bin/changevolume down",
+        "on-scroll-up": "~/.local/bin/changevolume up",
+        "tooltip": false,
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+        "on-scroll-down": "~/.local/bin/changebacklight down",
+        "on-scroll-up": "~/.local/bin/changebacklight up",
         "tooltip": false,
     },
     "cpu": {
@@ -77,12 +83,19 @@
         "format": " {}%",
         "interval": 1,
     },
+    "battery": {
+        "format" : "{icon} {capacity}%",
+        "format-charging" : " {icon} {capacity}%",
+        "format-plugged" : " {icon} {capacity}%",
+        "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+        "interval": 1,
+    },
     "clock": {
         "format": " {:%a, %b %d 󰥔 %I:%M %p}",
         "tooltip": false,
     },
     "tray": {
         "icon-size": 16,
-        "spacing": 5
+        "spacing": 5,
     },
 }

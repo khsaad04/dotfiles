@@ -5,9 +5,11 @@ tooltip,
 #workspaces button label,
 #mpris,
 #network,
+#backlight,
 #pulseaudio,
 #cpu,
 #memory,
+#battery,
 #clock {
   all: initial;
   font-family: {{font_name}};
@@ -92,9 +94,11 @@ tooltip {
 }
 
 #network,
+#backlight,
 #pulseaudio,
 #cpu,
 #memory,
+#battery,
 #clock,
 #tray {
   color: #{{on_surface}};

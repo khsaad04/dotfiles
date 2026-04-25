@@ -80,7 +80,7 @@ vim.cmd("packadd nohlsearch")
 -- nvim-treesitter
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
-local parsers = { "lua", "c", "rust" }
+local parsers = { "lua", "c", "rust", "json" }
 require("nvim-treesitter").install(parsers)
 
 vim.api.nvim_create_autocmd("FileType", {

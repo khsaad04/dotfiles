@@ -13,7 +13,7 @@ client.focused            #005142     #86d6bf     #00382d     #86d6bf     #00514
 client.focused_inactive   #344c44     #b2ccc2     #1d352e     #b2ccc2     #344c44
 client.unfocused          #1b211f     #0f1513     #3f4945     #0f1513     #1b211f
 
-font pango:Iosevka 10 
+font pango:Iosevka 14 
 
 titlebar_padding 5 1
 default_border normal 1
@@ -26,16 +26,26 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
     gsettings set $gnome-schema color-scheme 'prefer-dark'
-    gsettings set $gnome-schema font-name 'Iosevka 10'
+    gsettings set $gnome-schema font-name 'Iosevka 14'
 }
 
 ### Output configuration
 output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 
+### Idle configuration
+exec swayidle -w \
+         timeout 600 'swaylock -f -c b2ccc2' \
+         timeout 660 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+
 ### Input configuration
+input "type:touchpad" {
+    tap enabled
+    natural_scroll enabled
+}
+
 input "type:pointer" {
-  accel_profile flat
-  pointer_accel 0
+    accel_profile flat
+    pointer_accel 0
 }
 
 input "type:keyboard" {
@@ -141,9 +151,15 @@ bindsym $mod+r mode "resize"
 bindsym --locked XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
 bindsym --locked XF86AudioLowerVolume exec ~/.local/bin/changevolume down
 bindsym --locked XF86AudioMute exec ~/.local/bin/changevolume mute
+bindsym --locked XF86MonBrightnessUp exec ~/.local/bin/changebacklight up
+bindsym --locked XF86MonBrightnessDown exec ~/.local/bin/changebacklight down
 bindsym --no-repeat Print exec grimshot --notify savecopy
 bindsym --no-repeat Shift+Print exec grimshot --notify savecopy area
 bindsym --no-repeat Ctrl+Print exec grimshot --notify savecopy window
+
+# Lid on/off
+bindswitch lid:on  output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
 
 ### Assign
 assign [app_id="Firefox"] 2
@@ -158,6 +174,7 @@ exec fcitx5
 exec firefox
 exec kdeconnect-indicator
 exec syncthing serve --no-browser
+exec brillo -I
 
 bar swaybar_command waybar
 

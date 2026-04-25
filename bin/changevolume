@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
+set -e
+
 icon_path="$(dirname "$0")/icons"
 amount=${2:-5}
-id_output="80085"
-timeout=2000
-is_muted_output=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '[]')
+notif_id="80085"
+timeout=2000 # in miliseconds
+
+is_output_muted=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '[]')
 
 function notification_bar {
     notify-send -u low -r "$id" -a "$header" -i "$icon" -h int:value:"$volume" "$text" -t $timeout
 }
 
-function notification_mute {
+function notification_muted {
     notify-send "$text" -u low -r $id -a "$header" -i "$icon" -t $timeout
 }
 
@@ -21,7 +24,7 @@ up)
     header="Volume"
     text="Currently at $volume%"
     icon="$icon_path/vol-up.png"
-    id=$id_output
+    id=$notif_id
     notification_bar;;
 down)
     wpctl set-volume @DEFAULT_AUDIO_SINK@ "$amount"%-
@@ -29,23 +32,23 @@ down)
     header="Volume"
     text="Currently at $volume%"
     icon="$icon_path/vol-down.png"
-    id=$id_output
+    id=$notif_id
     notification_bar;;
 mute)
-    echo "$is_muted_output"
-    if [ "$is_muted_output" == "[]" ]; then
+    echo "$is_output_muted"
+    if [ "$is_output_muted" == "[]" ]; then
         header="Volume"
         text="Unmuted."
         icon="$icon_path/vol.png"
-        id=$id_output
+        id=$notif_id
         wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-        notification_mute
+        notification_muted
     else
         header="Volume"
         text="Muted."
         icon="$icon_path/vol-muted.png"
-        id=$id_output
+        id=$notif_id
         wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-        notification_mute
+        notification_muted
     fi;;
 esac

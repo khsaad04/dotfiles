@@ -3,7 +3,7 @@ wallpaper = "~/Pictures/wallpapers/wp.png"
 
 [variables]
 font_name = "Iosevka"
-font_size = "10"
+font_size = "14"
 
 [entries]
 dunst    = [ { target = "./configs/dunst/dunstrc",    template = "./templates/dunstrc",       dest = "~/.config/dunst/dunstrc"   } ]

@@ -5,13 +5,15 @@ tooltip,
 #workspaces button label,
 #mpris,
 #network,
+#backlight,
 #pulseaudio,
 #cpu,
 #memory,
+#battery,
 #clock {
   all: initial;
   font-family: Iosevka;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 window#waybar {
@@ -92,9 +94,11 @@ tooltip {
 }
 
 #network,
+#backlight,
 #pulseaudio,
 #cpu,
 #memory,
+#battery,
 #clock,
 #tray {
   color: #dee4e0;

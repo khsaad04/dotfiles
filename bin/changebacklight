@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -e
+
+icon_path="$(dirname "$0")/icons"
+amount=${2:-5}
+notif_id="80086"
+timeout=2000 # in miliseconds
+
+function notification_bar {
+    notify-send -u low -r "$id" -a "$header" -i "$icon" -h int:value:"$brightness" "$text" -t $timeout
+}
+
+case $1 in
+up)
+    brillo -A $amount
+    brightness=$(brillo | cut -d "." -f 1)
+    header="Brightness"
+    text="Currently at $brightness%"
+    icon="$icon_path/brightness-up.png"
+    id=$notif_id
+    notification_bar;;
+down)
+    brillo -U $amount
+    brightness=$(brillo | cut -d "." -f 1)
+    header="Brightness"
+    text="Currently at $brightness%"
+    icon="$icon_path/brightness-down.png"
+    id=$notif_id
+    notification_bar;;
+esac
+
+brillo -O
