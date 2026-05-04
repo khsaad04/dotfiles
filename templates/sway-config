@@ -33,9 +33,16 @@ exec_always {
 output * bg {{wallpaper}} fill
 
 ### Idle configuration
+# Locks the screen after idle for 10 minutes and turns the screen off 10 seconds after that.
 exec swayidle -w \
-         timeout 600 'swaylock -f -c {{secondary}}' \
-         timeout 660 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+        timeout 600 "swaylock -f -c {{surface}}"   \
+        timeout 610 'swaymsg "output * power off"' \
+        resume      'swaymsg "output * power on"'
+
+# Turns off keyboard backlight after idle for 30 seconds.
+exec swayidle -w \
+        timeout 30 "brillo -k -O && asus-kbd-backlight off" \
+        resume     "brillo -k -I"
 
 ### Input configuration
 input "type:touchpad" {
