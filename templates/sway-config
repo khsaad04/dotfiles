@@ -5,9 +5,13 @@ set $down j
 set $up k
 set $right l
 set $term foot
-set $menu ~/.local/bin/wmenu-custom
+set $bin_path ~/.local/bin
+set $menu $bin_path/wmenu-custom
 
 ### Appearance
+
+# Colors
+#
 # class                   border      background  text        indicator   child_border
 client.focused            #{{primary_container}}     #{{primary}}     #{{on_primary}}     #{{primary}}     #{{primary_container}}
 client.focused_inactive   #{{secondary_container}}     #{{secondary}}     #{{on_secondary}}     #{{secondary}}     #{{secondary_container}}
@@ -21,7 +25,7 @@ default_floating_border none
 hide_edge_borders smart_no_gaps
 smart_gaps on
 
-# gtk theme
+# Gtk theme
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
@@ -71,7 +75,7 @@ bindsym $mod+d exec $menu drun
 bindsym $mod+Shift+d exec $menu run
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec ~/.local/bin/powermenu
+bindsym $mod+Shift+e exec $bin_path/powermenu
 
 # Moving around:
 bindsym $mod+$left focus left
@@ -156,11 +160,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Utilities
-bindsym --locked XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
-bindsym --locked XF86AudioLowerVolume exec ~/.local/bin/changevolume down
-bindsym --locked XF86AudioMute exec ~/.local/bin/changevolume mute
-bindsym --locked XF86MonBrightnessUp exec ~/.local/bin/changebacklight up
-bindsym --locked XF86MonBrightnessDown exec ~/.local/bin/changebacklight down
+bindsym --locked XF86AudioRaiseVolume exec $bin_path/changevolume up
+bindsym --locked XF86AudioLowerVolume exec $bin_path/changevolume down
+bindsym --locked XF86AudioMute exec $bin_path/changevolume mute
+bindsym --locked XF86MonBrightnessUp exec $bin_path/changebacklight up
+bindsym --locked XF86MonBrightnessDown exec $bin_path/changebacklight down
 bindsym --no-repeat Print exec grimshot --notify savecopy
 bindsym --no-repeat Shift+Print exec grimshot --notify savecopy area
 bindsym --no-repeat Ctrl+Print exec grimshot --notify savecopy window
@@ -169,9 +173,6 @@ bindsym --no-repeat Ctrl+Print exec grimshot --notify savecopy window
 bindswitch lid:on  output eDP-1 disable
 bindswitch lid:off output eDP-1 enable
 
-### Assign
-assign [app_id="Firefox"] 2
-
 ### Execute at startup
 exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 exec pipewire
@@ -179,7 +180,6 @@ exec dunst
 exec nm-applet --indicator
 exec wl-clip-persist -c regular
 exec fcitx5
-exec firefox
 exec kdeconnect-indicator
 exec syncthing serve --no-browser
 exec brillo -I
