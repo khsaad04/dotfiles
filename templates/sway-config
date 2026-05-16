@@ -34,6 +34,7 @@ exec_always {
 }
 
 ### Output configuration
+output eDP-1 mode 1920x1200@60.000Hz
 output * bg {{wallpaper}} fill
 
 ### Idle configuration
