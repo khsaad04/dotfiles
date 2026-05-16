@@ -34,7 +34,9 @@ exec_always {
 }
 
 ### Output configuration
-output eDP-1 mode 1920x1200@60.000Hz
+exec_always run-on-bat swaymsg output eDP-1 mode 1920x1200@60.000Hz
+exec_always run-on-ac swaymsg output eDP-1 mode 1920x1200@144.002Hz
+
 output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 
 ### Idle configuration
