@@ -13,7 +13,7 @@ tooltip,
 #clock {
   all: initial;
   font-family: Iosevka;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 window#waybar {

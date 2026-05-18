@@ -36,6 +36,8 @@ exec_always {
 ### Output configuration
 exec_always run-on-bat swaymsg output eDP-1 mode 1920x1200@60.000Hz
 exec_always run-on-ac swaymsg output eDP-1 mode 1920x1200@144.002Hz
+output eDP-1 scale_filter smart
+output eDP-1 scale 1.25
 
 output * bg {{wallpaper}} fill
 

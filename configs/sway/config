@@ -17,7 +17,7 @@ client.focused            #005142     #86d6bf     #00382d     #86d6bf     #00514
 client.focused_inactive   #344c44     #b2ccc2     #1d352e     #b2ccc2     #344c44
 client.unfocused          #1b211f     #0f1513     #3f4945     #0f1513     #1b211f
 
-font pango:Iosevka 14 
+font pango:Iosevka 10 
 
 titlebar_padding 5 1
 default_border normal 1
@@ -30,12 +30,14 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
     gsettings set $gnome-schema color-scheme 'prefer-dark'
-    gsettings set $gnome-schema font-name 'Iosevka 14'
+    gsettings set $gnome-schema font-name 'Iosevka 10'
 }
 
 ### Output configuration
 exec_always run-on-bat swaymsg output eDP-1 mode 1920x1200@60.000Hz
 exec_always run-on-ac swaymsg output eDP-1 mode 1920x1200@144.002Hz
+output eDP-1 scale_filter smart
+output eDP-1 scale 1.25
 
 output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 
