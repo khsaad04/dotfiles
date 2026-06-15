@@ -17,19 +17,19 @@ tooltip,
 }
 
 window#waybar {
-  background-color: #1b211e;
-  color: #dee4df;
+  background-color: #1f2019;
+  color: #e3e3d7;
 }
 
 tooltip {
-  background-color: #1b211e;
-  color: #dee4df;
-  border: 1px solid #89938d;
+  background-color: #1f2019;
+  color: #e3e3d7;
+  border: 1px solid #909284;
   border-radius: 2px;
 }
 
 #workspaces {
-  background-color: #303633;
+  background-color: #34362d;
   border-radius: 2px;
   margin: 2px 2px;
 }
@@ -45,20 +45,20 @@ tooltip {
 
 #workspaces button.active,
 #workspaces button.focused {
-  background-color: #8bd6b6;
+  background-color: #bacf82;
 }
 
 #workspaces button label {
-  color: #dee4df;
+  color: #e3e3d7;
 }
 
 #workspaces button.active label,
 #workspaces button.focused label {
-  color: #003828;
+  color: #273500;
 }
 
 #mpris {
-  color: #0f1512;
+  color: #12140d;
   margin-top: 2px;
   margin-bottom: 2px;
   padding: 0px 3px;
@@ -101,8 +101,8 @@ tooltip {
 #battery,
 #clock,
 #tray {
-  color: #dee4df;
-  background-color: #303633;
+  color: #e3e3d7;
+  background-color: #34362d;
   border-radius: 2px;
   margin: 2px 2px;
   padding: 0px 3px;

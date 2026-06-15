@@ -14,9 +14,9 @@ set $menu $bin_path/wmenu-custom
 ### Appearance
 # Colors:
 # class                   border      background  text        indicator   child_border
-client.focused            #00513b     #8bd6b6     #003828     #8bd6b6     #00513b
-client.focused_inactive   #354b41     #b3ccbf     #1f352b     #b3ccbf     #354b41
-client.unfocused          #1b211e     #0f1512     #404944     #0f1512     #1b211e
+client.focused            #3c4c0e     #bacf82     #273500     #bacf82     #3c4c0e
+client.focused_inactive   #434931     #c3caaa     #2d331c     #c3caaa     #434931
+client.unfocused          #1f2019     #12140d     #46483c     #12140d     #1f2019
 
 # Font:
 font pango:Iosevka 10 
@@ -45,7 +45,7 @@ output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 ### Idle configuration
 # Locks the screen after idle for 10 minutes and turns the screen off 10 seconds after that.
 # exec swayidle -w \
-#         timeout 600 "swaylock -f -c 0f1512"   \
+#         timeout 600 "swaylock -f -c 12140d"   \
 #         timeout 610 'swaymsg "output * power off"' \
 #         resume      'swaymsg "output * power on"'
 

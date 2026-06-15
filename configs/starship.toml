@@ -2,14 +2,14 @@ format = "$username$directory$all$cmd_duration$line_break$character"
 
 [username]
 format     = "[$user]($style) "
-style_root = "bold fg:#8bd6b6"
-style_user = "bold fg:#8bd6b6"
+style_root = "bold fg:#bacf82"
+style_user = "bold fg:#bacf82"
 
 [directory]
-style           = "bold fg:#b3ccbf"
-read_only_style = "bold fg:#b3ccbf"
+style           = "bold fg:#c3caaa"
+read_only_style = "bold fg:#c3caaa"
 fish_style_pwd_dir_length = 1
 
 [git_branch]
 format = "[\\($branch(:$remote_branch)\\)]($style) "
-style  = "bold #a6cce0"
+style  = "bold #a1d0c7"
