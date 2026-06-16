@@ -8,6 +8,7 @@ notif_id="80085"
 timeout=2000 # in miliseconds
 
 is_output_muted=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '[]')
+is_input_muted=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | tr -dc '[]')
 
 function notification_bar {
     notify-send -u low -r "$id" -a "$header" -i "$icon" -h int:value:"$volume" "$text" -t $timeout
@@ -23,32 +24,55 @@ up)
     volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
     header="Volume"
     text="Currently at $volume%"
-    icon="$icon_path/vol-up.png"
+    icon="$icon_path/speaker-up.png"
     id=$notif_id
-    notification_bar;;
+    notification_bar
+    ;;
 down)
     wpctl set-volume @DEFAULT_AUDIO_SINK@ "$amount"%-
     volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
     header="Volume"
     text="Currently at $volume%"
-    icon="$icon_path/vol-down.png"
+    icon="$icon_path/speaker-down.png"
     id=$notif_id
-    notification_bar;;
+    notification_bar
+    ;;
 mute)
-    echo "$is_output_muted"
-    if [ "$is_output_muted" == "[]" ]; then
-        header="Volume"
-        text="Unmuted."
-        icon="$icon_path/vol.png"
-        id=$notif_id
-        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-        notification_muted
-    else
-        header="Volume"
-        text="Muted."
-        icon="$icon_path/vol-muted.png"
-        id=$notif_id
-        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-        notification_muted
-    fi;;
+    case $2 in
+        mic)
+            if [ "$is_input_muted" == "[]" ]; then
+                header="Volume"
+                text="Unmuted."
+                icon="$icon_path/mic.png"
+                id=$notif_id
+                wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+                notification_muted
+            else
+                header="Volume"
+                text="Muted."
+                icon="$icon_path/mic-muted.png"
+                id=$notif_id
+                wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+                notification_muted
+            fi
+            ;;
+        *)
+            if [ "$is_output_muted" == "[]" ]; then
+                header="Volume"
+                text="Unmuted."
+                icon="$icon_path/speaker.png"
+                id=$notif_id
+                wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+                notification_muted
+            else
+                header="Volume"
+                text="Muted."
+                icon="$icon_path/speaker-muted.png"
+                id=$notif_id
+                wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+                notification_muted
+            fi
+            ;;
+    esac
+    ;;
 esac
