@@ -39,6 +39,7 @@ exec_always {
 seat * xcursor_theme Adwaita 16
 
 ### Output configuration
+output eDP-1 mode 1920x1200@60.000Hz
 output eDP-1 scale 1.25
 output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 
