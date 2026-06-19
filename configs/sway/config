@@ -50,9 +50,9 @@ output * bg /home/khsaad/Pictures/wallpapers/wp.png fill
 #         timeout 610 'swaymsg "output * power off"' \
 #         resume      'swaymsg "output * power on"'
 
-# Turns off keyboard backlight after idle for 30 seconds.
+# Turns off keyboard backlight after idle for 60 seconds.
 exec swayidle -w \
-        timeout 30 "brillo -k -O && asus-kbd-backlight off" \
+        timeout 60 "brillo -k -O && asus-kbd-backlight off" \
         resume     "brillo -k -I"
 
 ### Input configuration
