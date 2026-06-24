@@ -4,3 +4,6 @@ name  = "khsaad04"
 
 [core]
 hooksPath = "~/.config/git/hooks"
+
+[init]
+defaultBranch = "main"
