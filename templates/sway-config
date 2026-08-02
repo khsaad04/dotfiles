@@ -188,7 +188,6 @@ exec dunst
 exec nm-applet --indicator
 exec wl-clip-persist -c regular
 exec fcitx5
-exec kdeconnect-indicator
 exec syncthing serve --no-browser
 exec brillo -I
 
